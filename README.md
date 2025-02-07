@@ -1,37 +1,25 @@
 Trip Planner App
 
-An integrated travel planning application designed to simplify trip planning for individuals and groups. It brings together transportation, accommodation, budgeting tools, and equipment rental services into one user-friendly platform.
+The Trip Planner App is a comprehensive solution designed to simplify travel planning and management. It connects travelers with vendors like bus operators, hotel owners, and equipment renters. The app features personalized trip planning, real-time updates, and vendor advertisement space.
 
-Table of Contents
-
-Introduction
-Features
-Technology Stack
-
-Introduction
-
-Planning a trip can be time-consuming and stressful due to scattered resources for booking transportation, accommodation, and managing budgets. The Trip Planner App consolidates all these services, offering both automatic budget planning and manual trip customization. It also provides advertising space for local vendors such as bus owners, small hotel operators, and equipment rental services.
 Features
 
-Automatic Budget Planner: Input your travel details and get a complete, budget-friendly itinerary.
-Manual Planner: Customize your trip by selecting specific accommodations, transportation, and rental equipment.
-Vendor Ad Placement: Local businesses can advertise their services, making them easily accessible to travelers.
-Integrated Equipment Rentals: Rent camping gear, vehicles, and other travel equipment directly from the app.
-Customizable Itineraries: Build and adjust trip plans according to your preferences.
-Map-Based Route Recommendations: View optimized travel routes and nearby points of interest.
-Price Comparison: Compare prices for transportation, accommodations, and rentals.
-Fuel Calculator: Estimate fuel costs for personal vehicles based on distance and fuel prices.
+Trip Planning: Customize trips with detailed itineraries.
+
+Real-Time Updates: Get the latest travel alerts and notifications.
+
+Vendor Integration: Bus owners, hotel operators, and equipment renters can advertise and manage their services.
+
+Interactive Map: Locate vendors and plan routes efficiently.
+
+User Reviews: Share and read reviews for better decision-making.
 
 Technology Stack
 
-Frontend:
+Frontend: Flutter
 
 Backend: Java Spring Boot
 
-Database:
-
-ORM: 
-
-Testing: 
+Database: MySQL
 
 APIs: Google Maps API for location tracking and route planning
