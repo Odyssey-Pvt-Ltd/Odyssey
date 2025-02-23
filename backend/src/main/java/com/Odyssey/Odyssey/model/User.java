@@ -1,41 +1,49 @@
-package com.Odyssey.Odyssey.Entity;
+package com.Odyssey.Odyssey.model;
 
 
+import com.Odyssey.Odyssey.dto.ShopDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
+import java.util.ArrayList;
+
+
+
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
-
 public class User {
 
     @Id
-    @GeneratedValue( Strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(massage = "Name is required")
+    @NotBlank(message = "Name is required")
     private String name;
 
-    @NotBlank (massage = "Email is required")
+    @NotBlank(message = "Email is required")
     @Email
-    @Column (unique = true)
+    @Column(unique = true)
     private String email;
 
     private String phoneNumber;
 
-    @NotBlank(massahge = "password is required")
+    @NotBlank(message = "Password is required")
     private String password;
 
     @Transient
-    @NotBlank
+    @NotBlank(message = "Confirm Password is required")
     private String confirmPassword;
+
+    @ElementCollection
+    private List<ShopDTO> favorites = new ArrayList<>();
 
 
 }
