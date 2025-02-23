@@ -23,3 +23,5 @@ Backend: Java Spring Boot
 Database: MySQL
 
 APIs: Google Maps API for location tracking and route planning
+
+Figma Ui :- https://www.figma.com/design/lsc9goYuOXsIum4x1DbHRI/Odyssey?node-id=1-9&p=f&t=f953hRoy5pF4krQ2-0
