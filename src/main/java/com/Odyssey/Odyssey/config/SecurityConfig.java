@@ -1,4 +1,4 @@
-package com.Odyssey.Odyssey.config;
+package com.Odyssey.Odyssey.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

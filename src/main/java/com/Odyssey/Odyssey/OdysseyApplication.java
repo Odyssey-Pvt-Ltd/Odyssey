@@ -9,5 +9,4 @@ public class OdysseyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OdysseyApplication.class, args);
 	}
-
 }
