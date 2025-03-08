@@ -5,9 +5,8 @@ import com.Odyssey.Odyssey.dto.ShopDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -28,6 +27,8 @@ public class User {
     @NotBlank(message = "Name is required")
     private String name;
 
+    @Setter
+    @Getter
     @NotBlank(message = "Email is required")
     @Email
     @Column(unique = true)
@@ -35,9 +36,14 @@ public class User {
 
     private String phoneNumber;
 
+
+    @Setter
+    @Getter
     @NotBlank(message = "Password is required")
     private String password;
 
+    @Setter
+    @Getter
     @Transient
     @NotBlank(message = "Confirm Password is required")
     private String confirmPassword;
