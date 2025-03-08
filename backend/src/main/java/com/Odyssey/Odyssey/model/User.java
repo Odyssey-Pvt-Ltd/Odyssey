@@ -27,8 +27,6 @@ public class User {
     @NotBlank(message = "Name is required")
     private String name;
 
-    @Setter
-    @Getter
     @NotBlank(message = "Email is required")
     @Email
     @Column(unique = true)
@@ -37,19 +35,39 @@ public class User {
     private String phoneNumber;
 
 
-    @Setter
-    @Getter
     @NotBlank(message = "Password is required")
     private String password;
 
-    @Setter
-    @Getter
     @Transient
     @NotBlank(message = "Confirm Password is required")
     private String confirmPassword;
 
     @ElementCollection
     private List<ShopDTO> favorites = new ArrayList<>();
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
 
 }
