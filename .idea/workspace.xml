@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="changing databse name and password appplication properties">
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="Vendor class updated (add variables and annotaions) to initiale vendor as valid jpa entity">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Vendor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +46,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.OdysseyApplication.executor": "Run",
     "git-widget-placeholder": "Binara",
     "kotlin-language-version-configured": "true",
@@ -109,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741420507245</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Vendor class updated (add variables and annotaions) to initiale vendor as valid jpa entity">
+      <option name="closed" value="true" />
+      <created>1741425455799</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741425455800</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +130,7 @@
     <MESSAGE value="adding getter and setter annotations for methods in user class" />
     <MESSAGE value="removing getter and setter annotaions and adding methods manually in user class" />
     <MESSAGE value="changing databse name and password appplication properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing databse name and password appplication properties" />
+    <MESSAGE value="Vendor class updated (add variables and annotaions) to initiale vendor as valid jpa entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vendor class updated (add variables and annotaions) to initiale vendor as valid jpa entity" />
   </component>
 </project>
