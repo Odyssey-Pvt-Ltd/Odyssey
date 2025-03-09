@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="Defining the password encoder Bean in security Config class">
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="changing the server port to 8080 (default one) and keeping sql at 3306">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741435750600</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="changing the server port to 8080 (default one) and keeping sql at 3306">
+      <option name="closed" value="true" />
+      <created>1741437189381</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741437189381</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +145,7 @@
     <MESSAGE value="changing databse name and password appplication properties" />
     <MESSAGE value="Vendor class updated (add variables and annotaions) to initiale vendor as valid jpa entity" />
     <MESSAGE value="Defining the password encoder Bean in security Config class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Defining the password encoder Bean in security Config class" />
+    <MESSAGE value="changing the server port to 8080 (default one) and keeping sql at 3306" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing the server port to 8080 (default one) and keeping sql at 3306" />
   </component>
 </project>
