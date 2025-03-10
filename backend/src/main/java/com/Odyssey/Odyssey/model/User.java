@@ -32,6 +32,7 @@ public class User {
     @Column(unique = true)
     private String email;
 
+    @NotBlank(message = "Phone Number is required")
     private String phoneNumber;
 
 
@@ -44,30 +45,6 @@ public class User {
 
     @ElementCollection
     private List<ShopDTO> favorites = new ArrayList<>();
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
 
 }

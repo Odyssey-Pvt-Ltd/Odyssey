@@ -27,7 +27,7 @@ public class Listing {
     private int price;
 
     @ManyToOne
-    private Category category;
+    private Category Listingcategory;
 
     @Column(length = 1000)
     @ElementCollection
