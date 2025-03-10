@@ -1,6 +1,7 @@
 package com.Odyssey.Odyssey.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ public class Listing {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int listing_id;
 
     private String title;
 
@@ -25,6 +26,9 @@ public class Listing {
     //private Location location;
 
     private int price;
+
+    @NotBlank(message = "Required listing type")
+    private listing_type listing_type;
 
     @ManyToOne
     private Category Listingcategory;
