@@ -1,5 +1,5 @@
 package com.Odyssey.Odyssey.controller;
-
+/*
 import com.Odyssey.Odyssey.model.User;
 import com.Odyssey.Odyssey.dto.LoginRequest;
 import com.Odyssey.Odyssey.service.UserService;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/api/auth")
@@ -43,4 +44,4 @@ public class AuthController {
                 .map(user -> ResponseEntity.ok("Login successful!"))
                 .orElse(ResponseEntity.status(401).body("Invalid credentials!"));
     }
-}
+}*/

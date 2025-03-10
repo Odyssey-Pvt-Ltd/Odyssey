@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="changing the server port to 8080 (default one) and keeping sql at 3306">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Fav.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/FavListing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Shop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/USER_ROLE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/JwtTokenValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Vendor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,7 +99,7 @@
       <workItem from="1741335744199" duration="32000" />
       <workItem from="1741335784433" duration="52000" />
       <workItem from="1741590064179" duration="451000" />
-      <workItem from="1741596014192" duration="10637000" />
+      <workItem from="1741596014192" duration="13153000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
