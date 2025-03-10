@@ -27,7 +27,7 @@ public class Listing {
     private int price;
 
     @ManyToOne
-    private Category category;
+    private Category Listingcategory;
 
     @Column(length = 1000)
     @ElementCollection
@@ -37,5 +37,5 @@ public class Listing {
 
     @ManyToOne
     @JoinColumn(name = "vendor_id", nullable = false)
-    private Vendor vendor;
+    private Shop vendor;
 }

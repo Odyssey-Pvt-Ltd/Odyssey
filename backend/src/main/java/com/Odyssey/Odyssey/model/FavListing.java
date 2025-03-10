@@ -1,29 +1,27 @@
 package com.Odyssey.Odyssey.model;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
 
-@Entity
-@Table(name="vendors")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Vendor {
+@Entity
+public class FavListing {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
 
-    private String Name;
+    @ManyToOne
+    @JsonIgnore
+    private Fav fav;
 
-    private String Email;
-
-    private String Phone;
-
-    private String Address;
+    @ManyToOne
+    private Listing listing;
 
 }
