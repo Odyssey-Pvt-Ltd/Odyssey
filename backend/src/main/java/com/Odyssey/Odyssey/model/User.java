@@ -36,8 +36,8 @@ public class User {
     @NotBlank(message = "Phone number required")
     private String phoneNumber;
 
-    @Getter
-    @Setter
+//    @Getter
+//    @Setter
     @NotBlank(message = "Address required")
     private String address;
 
