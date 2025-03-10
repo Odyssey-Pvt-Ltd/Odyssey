@@ -5,20 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="changing the server port to 8080 (default one) and keeping sql at 3306">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Fav.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/FavListing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Shop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/USER_ROLE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Vendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Vendor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/repository/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,7 +101,7 @@
       <workItem from="1741335744199" duration="32000" />
       <workItem from="1741335784433" duration="52000" />
       <workItem from="1741590064179" duration="451000" />
-      <workItem from="1741596014192" duration="4526000" />
+      <workItem from="1741596014192" duration="10637000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />

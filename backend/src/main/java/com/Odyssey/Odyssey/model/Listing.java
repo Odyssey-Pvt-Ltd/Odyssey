@@ -37,5 +37,5 @@ public class Listing {
 
     @ManyToOne
     @JoinColumn(name = "vendor_id", nullable = false)
-    private Vendor vendor;
+    private Shop vendor;
 }

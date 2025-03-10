@@ -43,6 +43,8 @@ public class User {
     @NotBlank(message = "Confirm Password is required")
     private String confirmPassword;
 
+    private USER_ROLE role;
+
     @ElementCollection
     private List<ShopDTO> favorites = new ArrayList<>();
 
