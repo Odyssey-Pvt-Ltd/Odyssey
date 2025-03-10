@@ -43,7 +43,7 @@ public class User {
     private String address;
 
     @NotBlank(message = "user type required (vendor/customer)")
-    private user_type userType;
+    private USER_ROLE userType;
 
 
     @JsonIgnore
