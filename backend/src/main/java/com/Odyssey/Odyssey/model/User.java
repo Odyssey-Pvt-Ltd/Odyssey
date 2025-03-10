@@ -38,6 +38,7 @@ public class User {
 
 //    @Getter
 //    @Setter
+
     @NotBlank(message = "Address required")
     private String address;
 
@@ -53,8 +54,14 @@ public class User {
     @NotBlank(message = "Confirm Password is required")
     private String confirmPassword;
 
+    //this is for users favourites
     @ElementCollection
     private List<ShopDTO> favorites = new ArrayList<>();
+
+    //this is for vendors listings
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)//cascade used for removal of all listings if removed (vendor)
+    private List<Listing> Listings=new ArrayList<>();
 
     public String getPassword() {
         return password;
