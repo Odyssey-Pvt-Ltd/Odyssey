@@ -5,6 +5,7 @@ import com.Odyssey.Odyssey.model.User;
 import com.Odyssey.Odyssey.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerUserDetailsService implements UserDetailsService {
@@ -22,18 +24,34 @@ public class CustomerUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(username);
+        Optional<User> userOptional = userRepository.findByEmail(username); // Declare the variable properly
 
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found" + username);
+        if (userOptional.isEmpty()) { // Check if the user does not exist
+            throw new UsernameNotFoundException("User not found: " + username);
         }
+
+        User user = userOptional.get(); // Extract User safely
         USER_ROLE role = user.getRole();
 
-
         List<GrantedAuthority> authorities = new ArrayList<>();
-
-        authorities.add(new simpleGrandAuthority(role.toString()));
+        authorities.add(new SimpleGrantedAuthority(role.toString()));
 
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
     }
 }
+/*
+        if (user.isPresent()) {
+            throw new UsernameNotFoundException("User not found" + username);
+        }
+
+        USER_ROLE role = user.get().getRole();
+
+        List<GrantedAuthority> authorities = new ArrayList<>();
+
+        authorities.add(new SimpleGrantedAuthority(role.toString()));
+
+        return new org.springframework.security.core.userdetails.User(user.get().getEmail(), user.get().getPassword(), authorities);
+    }
+}
+
+ */

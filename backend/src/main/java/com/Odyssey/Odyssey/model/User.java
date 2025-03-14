@@ -54,13 +54,17 @@ public class User {
     @NotBlank(message = "Confirm Password is required")
     private String confirmPassword;
 
-    //this is for users favourites
-    private USER_ROLE role = USER_ROLE.ROLE_USER;
+
+    private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
 
     @ElementCollection
     private List<ShopDTO> favorites = new ArrayList<>();
 
-    //this is for vendors listings
+    public USER_ROLE getRole() {
+        return role;
+    }
+
+
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)//cascade used for removal of all listings if removed (vendor)
     private List<Listing> Listings=new ArrayList<>();
