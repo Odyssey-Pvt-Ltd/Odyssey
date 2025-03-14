@@ -16,7 +16,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import io.jsonwebtoken.security.Keys;
 
 import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
 import java.io.IOException;
 import java.util.List;
 
@@ -35,9 +34,9 @@ public class JwtTokenValidator extends OncePerRequestFilter {
 
             try{
 
-                SecretKey key = Keys.hmacshakeyFor(SECRET_KEY.getBytes());
+                SecretKey key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
 
-                Claims claims = Jwts.parserBuilder().setSigningKey(key).parseClaimsJws(jwt).getBody();
+                Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
 
                 String email = String.valueOf(claims.get("email"));
                 String authorities = String.valueOf(claims.get("authorities"));

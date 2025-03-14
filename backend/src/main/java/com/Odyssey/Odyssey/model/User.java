@@ -55,7 +55,7 @@ public class User {
     private String confirmPassword;
 
     //this is for users favourites
-    private USER_ROLE role;
+    private USER_ROLE role = USER_ROLE.ROLE_USER;
 
     @ElementCollection
     private List<ShopDTO> favorites = new ArrayList<>();
@@ -88,6 +88,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
 }
