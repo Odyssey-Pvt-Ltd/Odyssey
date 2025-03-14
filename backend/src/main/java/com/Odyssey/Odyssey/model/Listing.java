@@ -39,7 +39,7 @@ public class Listing {
 
     private boolean active;
 
-    @ManyToOne
-    @JoinColumn(name = "vendor_id", nullable = false)
-    private Shop vendor;
+//    @ManyToOne
+//    @JoinColumn(name = "vendor_id", nullable = false)
+//    private Shop vendor;
 }

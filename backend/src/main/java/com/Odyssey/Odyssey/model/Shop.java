@@ -6,37 +6,37 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
-
-import java.util.ArrayList;
-import java.util.List;
-
-@Data
-@Entity
-@NoArgsConstructor
-@AllArgsConstructor
-public class Shop {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @OneToOne
-    private User owner;
-
-    private String name;
-
-    @OneToOne
-    private String address;
-
-    private String description;
-
-    private String phone;
-
-    private Boolean online;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "Shop" ,cascade = CascadeType.ALL)
-    private List<Listing> items = new ArrayList<>();
-
-
-}
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//@Data
+////@Entity
+//@NoArgsConstructor
+//@AllArgsConstructor
+//public class Shop {
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
+//
+//    @OneToOne
+//    private User owner;
+//
+//    private String name;
+//
+//    @OneToOne
+//    private String address;
+//
+//    private String description;
+//
+//    private String phone;
+//
+//    private Boolean online;
+//
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "Shop" ,cascade = CascadeType.ALL)
+//    private List<Listing> items = new ArrayList<>();
+//
+//
+//}
