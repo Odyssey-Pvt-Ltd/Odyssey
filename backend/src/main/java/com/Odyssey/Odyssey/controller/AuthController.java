@@ -2,10 +2,20 @@ package com.Odyssey.Odyssey.controller;
 
 
 import com.Odyssey.Odyssey.config.JwtProvider;
+import com.Odyssey.Odyssey.model.FavListing;
+import com.Odyssey.Odyssey.model.User;
+import com.Odyssey.Odyssey.repository.FavRepository;
 import com.Odyssey.Odyssey.repository.UserRepository;
+import com.Odyssey.Odyssey.response.AuthResponse;
 import com.Odyssey.Odyssey.service.CustomerUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,27 +23,49 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth")
 public class AuthController {
 
+    @Autowired
     private UserRepository userRepository;
+    @Autowired
     private PasswordEncoder passwordEncoder;
-
+    @Autowired
     private JwtProvider jwtProvider;
-
+    @Autowired
     private CustomerUserDetailsService customerUserDetailsService;
+    @Autowired
+    private FavRepository favRepository;
 
+    public ResponseEntity<AuthResponse>createUserHandler(@RequestBody User user){
 
+        User isEmailExsist = userRepository.findByEmail(user.getEmail());
 
+        if(isEmailExsist != null){
+            throw new Exception("Email is already used");
+        }
 
+        User createdUser = userRepository.save(user);
+        createdUser.setEmail(user.getEmail());
+        createdUser.setName(user.getName());
+        createdUser.setRole(user.getRole());
+        createdUser.setPassword(passwordEncoder.encode(user.getPassword()));
 
+        User savedUser = userRepository.save(createdUser);
 
+        FavListing favListing = new FavListing();
+        favListing.setCustomer(savedUser);
+        FavRepository.save(favListing);
 
+        Authentication authentication = new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword());
+        SecurityContextHolder.getContext().setAuthentication(authentication);
 
+        String jwt = jwtProvider.generateToken(authentication);
 
+        AuthResponse authResponse = new AuthResponse();
+        authResponse.setJwt(jwt);
+        authResponse.setMessage("Successfully logged in");
+        authResponse.setRole(savedUser.getRole());
 
-
-
-
-
-
+        return new ResponseEntity<>(authResponse, HttpStatus.OK);
+    }
 
 
 
