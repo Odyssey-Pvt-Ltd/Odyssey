@@ -5,11 +5,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
-//@Entity
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public class Shop {
@@ -23,10 +25,10 @@ public class Shop {
 
     private String name;
 
-    //@OneToOne
-    private String address;
-
     private String description;
+
+    @OneToOne
+    private Address address;
 
     private String phone;
 

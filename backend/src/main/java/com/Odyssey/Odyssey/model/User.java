@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long user_id;
 
     @NotBlank(message = "Name is required")
