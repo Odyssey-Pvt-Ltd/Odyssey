@@ -4,38 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a852bd7-e3a3-4a98-a5e7-ff6e2e734a44" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="changing the server port to 8080 (default one) and keeping sql at 3306">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/FavItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/JwtTokenValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/JwtTokenValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Fav.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/FavListing.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/FavListing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "binnyboi45"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;binnyboi45&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Amiru46/Odyssey.git",
-    "accountId": "6cfd9a76-c4cc-41b7-ae1e-2151dbc016d9"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Amiru46/Odyssey.git&quot;,
+    &quot;accountId&quot;: &quot;4434008d-33ea-4d1f-99d3-7a4bb8c7bb39&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
-  <component name="ProjectId" id="2uIKdTd1LkfjugV4MTjhwYo2rxg" />
+}</component>
+  <component name="ProblemsViewState">
+    <option name="autoscrollToSource" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2tbzSVj9UhywrDkEKEMMQXbPXgF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,9 +62,14 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.OdysseyApplication.executor": "Run",
-    "git-widget-placeholder": "Binara",
+    "git-widget-placeholder": "Amiru__3.0",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -68,24 +88,89 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6a852bd7-e3a3-4a98-a5e7-ff6e2e734a44" name="Changes" comment="" />
-      <created>1741930737513</created>
+      <changelist id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="" />
+      <created>1740635562941</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1741930737513</updated>
-      <workItem from="1741930738737" duration="31000" />
+      <updated>1740635562941</updated>
+      <workItem from="1740635564769" duration="723000" />
+      <workItem from="1741335744199" duration="32000" />
+      <workItem from="1741335784433" duration="52000" />
+      <workItem from="1741590064179" duration="451000" />
+      <workItem from="1741596014192" duration="13153000" />
+      <workItem from="1741767662013" duration="9000" />
+      <workItem from="1741955589535" duration="1731000" />
+      <workItem from="1741966648939" duration="8257000" />
     </task>
+    <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
+      <option name="closed" value="true" />
+      <created>1741419249946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741419249946</updated>
+    </task>
+    <task id="LOCAL-00002" summary="removing getter and setter annotaions and adding methods manually in user class">
+      <option name="closed" value="true" />
+      <created>1741419507326</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741419507326</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changing databse name and password appplication properties">
+      <option name="closed" value="true" />
+      <created>1741420507245</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741420507245</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Vendor class updated (add variables and annotaions) to initiale vendor as valid jpa entity">
+      <option name="closed" value="true" />
+      <created>1741425455799</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741425455800</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Defining the password encoder Bean in security Config class">
+      <option name="closed" value="true" />
+      <created>1741435750600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741435750600</updated>
+    </task>
+    <task id="LOCAL-00006" summary="changing the server port to 8080 (default one) and keeping sql at 3306">
+      <option name="closed" value="true" />
+      <created>1741437189381</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741437189381</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding getter and setter annotations for methods in user class" />
+    <MESSAGE value="removing getter and setter annotaions and adding methods manually in user class" />
+    <MESSAGE value="changing databse name and password appplication properties" />
+    <MESSAGE value="Vendor class updated (add variables and annotaions) to initiale vendor as valid jpa entity" />
+    <MESSAGE value="Defining the password encoder Bean in security Config class" />
+    <MESSAGE value="changing the server port to 8080 (default one) and keeping sql at 3306" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing the server port to 8080 (default one) and keeping sql at 3306" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 package com.Odyssey.Odyssey.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +16,9 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(unique=true)
-//    @ManyToOne
-    private String CategoryName;
+    private String name;
+
+    @ManyToOne
+    @JsonIgnore
+    private Shop shop;
 }
