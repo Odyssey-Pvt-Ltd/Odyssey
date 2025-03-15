@@ -1,27 +1,26 @@
 package com.Odyssey.Odyssey.model;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FavListing {
+@Entity
+public class FavItems {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
-    private User customer;
+    @ManyToOne
+    @JsonIgnore
+    private FavListing favListing;
 
-    @OneToMany(mappedBy = "favListing" ,cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<FavItems> items = new ArrayList<>();
+    @ManyToOne
+    private Listing listing;
+
 }
