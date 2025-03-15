@@ -16,6 +16,6 @@ public class Category {
     private Long id;
 
     @Column(unique=true)
-    @ManyToOne
+//    @ManyToOne
     private String CategoryName;
 }
