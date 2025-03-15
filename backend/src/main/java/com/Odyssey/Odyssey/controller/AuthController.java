@@ -1,19 +1,46 @@
 package com.Odyssey.Odyssey.controller;
-/*
-import com.Odyssey.Odyssey.model.User;
-import com.Odyssey.Odyssey.dto.LoginRequest;
-import com.Odyssey.Odyssey.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
 
+
+import com.Odyssey.Odyssey.config.JwtProvider;
+import com.Odyssey.Odyssey.repository.UserRepository;
+import com.Odyssey.Odyssey.service.CustomerUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/auth")
 public class AuthController {
 
-    @Autowired
+    private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
+
+    private JwtProvider jwtProvider;
+
+    private CustomerUserDetailsService customerUserDetailsService;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+ /*   @Autowired
     private UserService userService;
 
     @Autowired
