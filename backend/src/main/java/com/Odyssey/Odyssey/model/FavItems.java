@@ -22,4 +22,5 @@ public class FavItems {
 
     @ManyToOne
     private Listing listing;
+
 }
