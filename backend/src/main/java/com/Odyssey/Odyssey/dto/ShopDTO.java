@@ -13,12 +13,12 @@ public class ShopDTO {
 
     private String title;
 
-    @Column(length = 1000)
+//    @Column(length = 1000)
     private List<String> images;
 
     private String description;
 
-    private Long Id;
+    private Long id;
 
 
 
