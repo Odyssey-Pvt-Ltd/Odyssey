@@ -15,9 +15,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/auth")
@@ -34,12 +37,13 @@ public class AuthController {
     @Autowired
     private FavRepository favRepository;
 
+    @PostMapping("/signup")
     public ResponseEntity<AuthResponse>createUserHandler(@RequestBody User user){
 
-        User isEmailExsist = userRepository.findByEmail(user.getEmail());
+        Optional<User> isEmailExsist = userRepository.findByEmail(user.getEmail());
 
-        if(isEmailExsist != null){
-            throw new Exception("Email is already used");
+        if (isEmailExsist.isPresent()) {
+            throw new RuntimeException("Email is already used");  // Change Exception to RuntimeException
         }
 
         User createdUser = userRepository.save(user);
@@ -52,7 +56,7 @@ public class AuthController {
 
         FavListing favListing = new FavListing();
         favListing.setCustomer(savedUser);
-        FavRepository.save(favListing);
+        favRepository.save(favListing);
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword());
         SecurityContextHolder.getContext().setAuthentication(authentication);
