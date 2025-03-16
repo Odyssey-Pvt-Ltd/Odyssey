@@ -22,6 +22,6 @@ public class FavListing {
     @OneToOne
     private User customer;
 
-    @OneToMany(mappedBy = "FavListing" ,cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "favListing" ,cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FavItems> items = new ArrayList<>();
 }
