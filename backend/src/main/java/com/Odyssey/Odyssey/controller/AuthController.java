@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/auth")
@@ -46,11 +47,12 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<AuthResponse>createUserHandler(@RequestBody User user){
 
-        User isEmailExsist = userRepository.findByEmail(user.getEmail());
+        Optional<User> isEmailExsist = userRepository.findByEmail(user.getEmail());
 
-        if(isEmailExsist != null){
-            throw new Exception("Email is already used");
+        if (isEmailExsist.isPresent()) {
+            throw new RuntimeException("Email is already used");  // Change Exception to RuntimeException
         }
+
 
         User createdUser = userRepository.save(user);
         createdUser.setEmail(user.getEmail());
@@ -62,7 +64,7 @@ public class AuthController {
 
         FavListing favListing = new FavListing();
         favListing.setCustomer(savedUser);
-        FavRepository.save(favListing);
+        favRepository.save(favListing);
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword());
         SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -76,8 +78,8 @@ public class AuthController {
 
         return new ResponseEntity<>(authResponse, HttpStatus.OK);
     }
-    @PostMapping("/SignIn")
 
+    @PostMapping("/SignIn")
     public ResponseEntity<AuthResponse>SignIn(@RequestBody LoginRequest loginRequest){
 
         String username = loginRequest.getUsername();

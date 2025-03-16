@@ -25,6 +25,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long user_id;
 
+
     @NotBlank(message = "Name is required")
     private String name;
 
@@ -60,14 +61,18 @@ public class User {
     @ElementCollection
     private List<ShopDTO> favorites = new ArrayList<>();
 
-    public USER_ROLE getRole() {
-        return role;
-    }
-
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)//cascade used for removal of all listings if removed (vendor)
     private List<Listing> Listings=new ArrayList<>();
+
+    public USER_ROLE getRole() {
+        return role;
+    }
+
+    public void setRole(USER_ROLE role) {
+        this.role = role;
+    }
 
     public String getPassword() {
         return password;
@@ -91,5 +96,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName( String name) {
+        this.name = name;
     }
 }

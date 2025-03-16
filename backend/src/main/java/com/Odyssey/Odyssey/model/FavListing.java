@@ -24,4 +24,9 @@ public class FavListing {
 
     @OneToMany(mappedBy = "favListing" ,cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FavItems> items = new ArrayList<>();
+
+    public void setCustomer(User user) {
+        this.customer = user;
+    }
+
 }

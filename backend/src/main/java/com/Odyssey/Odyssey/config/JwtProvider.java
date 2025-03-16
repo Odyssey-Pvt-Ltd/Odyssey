@@ -9,17 +9,14 @@ import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static com.Odyssey.Odyssey.config.JwtConstant.SECRET_KEY;
 
 @Service
 public class JwtProvider {
 
-    private SecretKey key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+    private SecretKey key = Keys.hmacShaKeyFor(Base64.getDecoder().decode(SECRET_KEY));
 
     public String generateToken(Authentication auth) {
         Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
