@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="fixing users database table issue">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/controller/AuthController.java" afterDir="false" />
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="rename user_id to id to fix jpa issue">
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +121,7 @@
       <workItem from="1741955589535" duration="1731000" />
       <workItem from="1741966648939" duration="9599000" />
       <workItem from="1742019419250" duration="2144000" />
-      <workItem from="1742190265564" duration="2104000" />
+      <workItem from="1742190265564" duration="2446000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
@@ -182,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742109052165</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="rename user_id to id to fix jpa issue">
+      <option name="closed" value="true" />
+      <created>1742192419765</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742192419765</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +201,7 @@
     <MESSAGE value="Defining the password encoder Bean in security Config class" />
     <MESSAGE value="changing the server port to 8080 (default one) and keeping sql at 3306" />
     <MESSAGE value="working on login and user profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on login and user profile" />
+    <MESSAGE value="rename user_id to id to fix jpa issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename user_id to id to fix jpa issue" />
   </component>
 </project>

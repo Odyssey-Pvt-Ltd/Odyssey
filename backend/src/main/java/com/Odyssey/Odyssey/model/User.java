@@ -44,11 +44,11 @@ public class User {
     private String address;
 
 //    @NotBlank(message = "user type required (vendor/customer)")
-//    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private USER_ROLE userType;
 
 
-    @JsonIgnore
+//    @JsonIgnore
     @NotBlank(message = "Password is required")
     private String password;
 
@@ -56,7 +56,7 @@ public class User {
     @NotBlank(message = "Confirm Password is required")
     private String confirmPassword;
 
-
+    @Enumerated(EnumType.STRING)
     private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
 
     @ElementCollection
@@ -75,6 +75,7 @@ public class User {
         this.role = role;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
@@ -83,6 +84,7 @@ public class User {
         this.password = password;
     }
 
+    @JsonIgnore
     public String getConfirmPassword() {
         return confirmPassword;
     }
