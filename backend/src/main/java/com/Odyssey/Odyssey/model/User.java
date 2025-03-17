@@ -34,6 +34,7 @@ public class User {
     @Column(unique = true)
     private String email;
 
+
     @NotBlank(message = "Phone number required")
     private String phoneNumber;
 
@@ -116,5 +117,22 @@ public class User {
     public void setUserType(USER_ROLE userType) {
         this.userType = userType;
     }
+
+    public @NotBlank(message = "Phone number required") String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(@NotBlank(message = "Phone number required") String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public @NotBlank(message = "Address required") String getAddress() {
+        return address;
+    }
+
+    public void setAddress(@NotBlank(message = "Address required") String address) {
+        this.address = address;
+    }
+
 
 }

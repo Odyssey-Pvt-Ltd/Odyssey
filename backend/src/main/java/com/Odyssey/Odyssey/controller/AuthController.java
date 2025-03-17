@@ -46,7 +46,7 @@ public class AuthController {
     private FavRepository favRepository;
 
     @PostMapping("/signup")
-    public ResponseEntity<AuthResponse> createUserHandler(@Valid @RequestBody User user) {
+    public ResponseEntity<AuthResponse> createUserHandler( @RequestBody User user) {
 
         System.out.println("Received user: " + user);
 
