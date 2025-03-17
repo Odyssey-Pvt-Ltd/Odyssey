@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="changed the secret key (genertaed) adeed some getters and setters which were missing">
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/dto/LoginRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Binara" />
+        <entry key="$PROJECT_DIR$" value="Amiru_3.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +66,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.OdysseyApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Binara&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -93,8 +94,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GenerateSecretKey" />
-        <item itemvalue="Application.GenerateSecretKey" />
         <item itemvalue="Application.GenerateSecretKey" />
       </list>
     </recent_temporary>
@@ -124,6 +123,7 @@
       <workItem from="1741955589535" duration="1731000" />
       <workItem from="1741966648939" duration="9599000" />
       <workItem from="1742019419250" duration="2144000" />
+      <workItem from="1742190265564" duration="13599000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
@@ -181,15 +181,47 @@
       <option name="project" value="LOCAL" />
       <updated>1742109052165</updated>
     </task>
-    <task id="LOCAL-00008" summary="changed the secret key (genertaed) adeed some getters and setters which were missing">
+    <task id="LOCAL-00008" summary="rename user_id to id to fix jpa issue">
       <option name="closed" value="true" />
-      <created>1742115041051</created>
+      <created>1742192419765</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1742115041051</updated>
+      <updated>1742192419765</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added json ignore to get methods of password and confirm password and @enumerated annotation to both USER_ROLE enum variables">
+      <option name="closed" value="true" />
+      <created>1742192821089</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742192821089</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added changes to auth controller class signup method">
+      <option name="closed" value="true" />
+      <created>1742192881813</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742192881813</updated>
+    </task>
+    <task id="LOCAL-00011" summary="adding logging to signup method">
+      <option name="closed" value="true" />
+      <created>1742201797073</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742201797073</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass">
+      <option name="closed" value="true" />
+      <created>1742202514366</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742202514366</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +235,11 @@
     <MESSAGE value="Defining the password encoder Bean in security Config class" />
     <MESSAGE value="changing the server port to 8080 (default one) and keeping sql at 3306" />
     <MESSAGE value="working on login and user profile" />
-    <MESSAGE value="changed the secret key (genertaed) adeed some getters and setters which were missing" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the secret key (genertaed) adeed some getters and setters which were missing" />
+    <MESSAGE value="rename user_id to id to fix jpa issue" />
+    <MESSAGE value="added json ignore to get methods of password and confirm password and @enumerated annotation to both USER_ROLE enum variables" />
+    <MESSAGE value="added changes to auth controller class signup method" />
+    <MESSAGE value="adding logging to signup method" />
+    <MESSAGE value="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass" />
   </component>
 </project>

@@ -10,6 +10,7 @@ import com.Odyssey.Odyssey.repository.FavRepository;
 import com.Odyssey.Odyssey.repository.UserRepository;
 import com.Odyssey.Odyssey.response.AuthResponse;
 import com.Odyssey.Odyssey.service.CustomerUserDetailsService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +31,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("api/auth")
 public class AuthController {
 
     @Autowired
@@ -45,39 +46,50 @@ public class AuthController {
     private FavRepository favRepository;
 
     @PostMapping("/signup")
-    public ResponseEntity<AuthResponse>createUserHandler(@RequestBody User user){
+    public ResponseEntity<AuthResponse> createUserHandler( @RequestBody User user) {
 
-        Optional<User> isEmailExsist = userRepository.findByEmail(user.getEmail());
+        System.out.println("Received user: " + user);
 
-        if (isEmailExsist.isPresent()) {
-            throw new RuntimeException("Email is already used");  // Change Exception to RuntimeException
+        Optional<User> isEmailExist = userRepository.findByEmail(user.getEmail());
+        if (isEmailExist.isPresent()) {
+            throw new RuntimeException("Email is already used");
         }
 
+        // Ensure userType is set before saving
+        if (user.getUserType() == null) {
+            user.setUserType(USER_ROLE.ROLE_CUSTOMER);
+        }
 
-        User createdUser = userRepository.save(user);
-        createdUser.setEmail(user.getEmail());
-        createdUser.setName(user.getName());
-        createdUser.setRole(user.getRole());
-        createdUser.setPassword(passwordEncoder.encode(user.getPassword()));
+        // Encode the password BEFORE saving
+        if (user.getPassword() == null || user.getPassword().isBlank()) {
+            throw new IllegalArgumentException("Password cannot be null or empty");
+        }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        User savedUser = userRepository.save(createdUser);
 
+        User savedUser = userRepository.save(user);
+
+        // Create Favorite Listing for User
         FavListing favListing = new FavListing();
         favListing.setCustomer(savedUser);
         favRepository.save(favListing);
 
+        // Authenticate user after signup
         Authentication authentication = new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword());
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
+        // Generate JWT Token
         String jwt = jwtProvider.generateToken(authentication);
 
+        // Build Response
         AuthResponse authResponse = new AuthResponse();
         authResponse.setJwt(jwt);
-        authResponse.setMessage("Successfully logged in");
-        authResponse.setRole(savedUser.getRole());
+        authResponse.setMessage("Successfully registered and logged in");
+        authResponse.setRole(savedUser.getUserType());
 
         return new ResponseEntity<>(authResponse, HttpStatus.OK);
     }
+
 
     @PostMapping("/SignIn")
     public ResponseEntity<AuthResponse>SignIn(@RequestBody LoginRequest loginRequest){
