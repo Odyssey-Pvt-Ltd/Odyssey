@@ -10,6 +10,7 @@ import com.Odyssey.Odyssey.repository.FavRepository;
 import com.Odyssey.Odyssey.repository.UserRepository;
 import com.Odyssey.Odyssey.response.AuthResponse;
 import com.Odyssey.Odyssey.service.CustomerUserDetailsService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,7 +46,9 @@ public class AuthController {
     private FavRepository favRepository;
 
     @PostMapping("/signup")
-    public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) {
+    public ResponseEntity<AuthResponse> createUserHandler(@Valid @RequestBody User user) {
+
+        System.out.println("Received user: " + user);
 
         Optional<User> isEmailExist = userRepository.findByEmail(user.getEmail());
         if (isEmailExist.isPresent()) {
@@ -58,7 +61,11 @@ public class AuthController {
         }
 
         // Encode the password BEFORE saving
+        if (user.getPassword() == null || user.getPassword().isBlank()) {
+            throw new IllegalArgumentException("Password cannot be null or empty");
+        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+
 
         User savedUser = userRepository.save(user);
 

@@ -23,7 +23,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long user_id;
 
 
     @NotBlank(message = "Name is required")
@@ -75,7 +75,7 @@ public class User {
         this.role = role;
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     public String getPassword() {
         return password;
     }
@@ -84,7 +84,7 @@ public class User {
         this.password = password;
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     public String getConfirmPassword() {
         return confirmPassword;
     }
@@ -108,4 +108,13 @@ public class User {
     public void setName( String name) {
         this.name = name;
     }
+
+    public USER_ROLE getUserType() {
+        return userType;
+    }
+
+    public void setUserType(USER_ROLE userType) {
+        this.userType = userType;
+    }
+
 }
