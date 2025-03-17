@@ -23,7 +23,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long user_id;
+    private Long id;
 
 
     @NotBlank(message = "Name is required")
@@ -43,7 +43,8 @@ public class User {
     @NotBlank(message = "Address required")
     private String address;
 
-    @NotBlank(message = "user type required (vendor/customer)")
+//    @NotBlank(message = "user type required (vendor/customer)")
+//    @Enumerated(EnumType.STRING)
     private USER_ROLE userType;
 
 
