@@ -34,6 +34,7 @@ public class User {
     @Column(unique = true)
     private String email;
 
+
     @NotBlank(message = "Phone number required")
     private String phoneNumber;
 
@@ -43,11 +44,12 @@ public class User {
     @NotBlank(message = "Address required")
     private String address;
 
-    @NotBlank(message = "user type required (vendor/customer)")
+    //    @NotBlank(message = "user type required (vendor/customer)")
+    @Enumerated(EnumType.STRING)
     private USER_ROLE userType;
 
 
-    @JsonIgnore
+    //    @JsonIgnore
     @NotBlank(message = "Password is required")
     private String password;
 
@@ -55,7 +57,7 @@ public class User {
     @NotBlank(message = "Confirm Password is required")
     private String confirmPassword;
 
-
+    @Enumerated(EnumType.STRING)
     private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
 
     @ElementCollection
@@ -74,6 +76,7 @@ public class User {
         this.role = role;
     }
 
+    //    @JsonIgnore
     public String getPassword() {
         return password;
     }
@@ -82,6 +85,7 @@ public class User {
         this.password = password;
     }
 
+    //    @JsonIgnore
     public String getConfirmPassword() {
         return confirmPassword;
     }
@@ -105,4 +109,30 @@ public class User {
     public void setName( String name) {
         this.name = name;
     }
+
+    public USER_ROLE getUserType() {
+        return userType;
+    }
+
+    public void setUserType(USER_ROLE userType) {
+        this.userType = userType;
+    }
+
+    public @NotBlank(message = "Phone number required") String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(@NotBlank(message = "Phone number required") String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public @NotBlank(message = "Address required") String getAddress() {
+        return address;
+    }
+
+    public void setAddress(@NotBlank(message = "Address required") String address) {
+        this.address = address;
+    }
+
+
 }
