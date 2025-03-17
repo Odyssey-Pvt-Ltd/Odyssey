@@ -24,13 +24,16 @@ public class CustomerUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> userOptional = userRepository.findByEmail(username); // Declare the variable properly
+        System.out.println("Searching for user with email: " + username); // Log the email being searched
+        Optional<User> userOptional = userRepository.findByEmail(username);
 
-        if (userOptional.isEmpty()) { // Check if the user does not exist
+        if (userOptional.isEmpty()) {
+            System.out.println("User not found: " + username); // Log if user is not found
             throw new UsernameNotFoundException("User not found: " + username);
         }
 
-        User user = userOptional.get(); // Extract User safely
+        User user = userOptional.get();
+        System.out.println("User found: " + user.getEmail()); // Log the found user
         USER_ROLE role = user.getRole();
 
         List<GrantedAuthority> authorities = new ArrayList<>();
