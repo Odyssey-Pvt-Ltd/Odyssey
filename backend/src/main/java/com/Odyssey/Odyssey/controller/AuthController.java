@@ -94,6 +94,8 @@ public class AuthController {
     @PostMapping("/SignIn")
     public ResponseEntity<AuthResponse>SignIn(@RequestBody LoginRequest loginRequest){
 
+        System.out.println("SignIn endpoint called with: " + loginRequest);
+
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
 
@@ -112,6 +114,7 @@ public class AuthController {
         return new ResponseEntity<>(authResponse, HttpStatus.OK);
 
     }
+
 
     private Authentication authenticate(String username, String password) {
 

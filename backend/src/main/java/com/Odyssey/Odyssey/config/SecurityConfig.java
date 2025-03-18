@@ -25,17 +25,18 @@ public class SecurityConfig {
         http
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/api/auth/signup", "/api/auth/SignIn").permitAll() // ✅ Allow public access to signup & sign-in
                         .requestMatchers("/api/admin/**").hasAnyRole("SHOP_OWNER", "ADMIN") // Admin endpoints
-                        .requestMatchers("/api/auth/signup").permitAll() // Allow public access to signup
-                        .requestMatchers("/api/**").authenticated() // All other /api endpoints require authentication
+                        .requestMatchers("/api/**").authenticated() // Require authentication for all other API endpoints
                         .anyRequest().permitAll() // Allow all other requests
                 )
-                .addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
                 .csrf(csrf -> csrf.disable())
-                .cors(cors -> cors.configurationSource(corsConfigurationSource));
+                .cors(cors -> cors.configurationSource(corsConfigurationSource))
+                .addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class);
 
         return http.build();
     }
+
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
