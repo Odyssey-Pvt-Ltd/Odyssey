@@ -21,8 +21,10 @@ import java.util.ArrayList;
 @Table(name = "users")
 public class User {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
     private Long user_id;
 
 
@@ -59,6 +61,14 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
+
+    public List<ShopDTO> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(List<ShopDTO> favorites) {
+        this.favorites = favorites;
+    }
 
     @ElementCollection
     private List<ShopDTO> favorites = new ArrayList<>();

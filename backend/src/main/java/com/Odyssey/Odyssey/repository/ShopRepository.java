@@ -10,6 +10,6 @@ public interface ShopRepository extends JpaRepository<Shop, Long> {
 
     @Query("SELECT r FROM Shop r WHERE lower(r.name) LIKE lower(concat('%', :query, '%'))")
     List<Shop> findBySearchQuery(String query);
-    Shop findByOwnerId(Long userId);
+    Shop findByOwnerId(Long user_id);
 
 }

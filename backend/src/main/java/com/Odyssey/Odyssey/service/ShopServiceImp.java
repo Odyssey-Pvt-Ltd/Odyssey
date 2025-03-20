@@ -10,7 +10,6 @@ import com.Odyssey.Odyssey.repository.ShopRepository;
 import com.Odyssey.Odyssey.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -25,7 +24,7 @@ public class ShopServiceImp implements ShopService {
     private AddressRepository addressRepository;
 
     @Autowired
-    private UserService userService;
+    private UserRepository userRepository;
 
     @Override
     public Shop createShop(CreateShopRequest req, User user) {
@@ -33,8 +32,8 @@ public class ShopServiceImp implements ShopService {
         Address address = addressRepository.save(req.getAddress());
 
         Shop shop = new Shop();
-        shop.setName(req.getShopName());
         shop.setAddress(address);
+        shop.setName(req.getShopName());
         shop.setDescription(req.getDescription());
         shop.setOwner(user);
 
@@ -76,9 +75,9 @@ public class ShopServiceImp implements ShopService {
     @Override
     public Shop findShopById(Long ID) throws Exception {
 
-        Optional<Shop> shop = shopRepository.findById(ID);
+        Optional<Shop> opt = shopRepository.findById(ID);
 
-        if(opt.isEmail()){
+        if(opt.isEmpty()){
             throw new Exception("Email already exists");
         }
         return opt.get();
@@ -99,14 +98,29 @@ public class ShopServiceImp implements ShopService {
 
         Shop shop = findShopById(shopId);
 
-        ShopDTO shopDTO = new ShopDTO();
-        shopDTO.setDescription(shop.getDescription());
+        ShopDTO dto = new ShopDTO();
+        dto.setDescription(shop.getDescription());
+        dto.setTitle(shop.getName());
+        dto.setId(shop.getId());
 
-        return null;
+        if(user.getFavorites().contains(dto)){
+            user.getFavorites().remove(dto);
+        }
+
+        else user.getFavorites().add(dto);
+
+        userRepository.save(user);
+
+        return dto;
     }
 
     @Override
     public Shop UpdateShopStatus(Long ID) throws Exception {
-        return null;
+
+        Shop shop = findShopById(ID);
+
+        //shop.setOnline(!shop.isOnline());
+
+        return shopRepository.save(shop);
     }
 }
