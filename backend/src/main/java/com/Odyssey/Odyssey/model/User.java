@@ -21,11 +21,9 @@ import java.util.ArrayList;
 @Table(name = "users")
 public class User {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id")
-    private Long user_id;
+    @Column(name = "user_id") private Long user_id;
 
 
     @NotBlank(message = "Name is required")
@@ -142,6 +140,14 @@ public class User {
 
     public void setAddress(@NotBlank(message = "Address required") String address) {
         this.address = address;
+    }
+
+    public Long getId() {
+        return user_id;
+    }
+
+    public void setId(Long id) {
+        this.user_id = id;
     }
 
 
