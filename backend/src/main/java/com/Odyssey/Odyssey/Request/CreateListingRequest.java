@@ -18,5 +18,68 @@ public class CreateListingRequest {
 
     private long shopID;
     private boolean active;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void setShopID(long shopID) {
+        this.shopID = shopID;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isInactive() {
+        return Inactive;
+    }
+
+    public void setInactive(boolean inactive) {
+        Inactive = inactive;
+    }
+
     private boolean Inactive;
+
+    public Long getShopID() {
+        return shopID;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+
 }
