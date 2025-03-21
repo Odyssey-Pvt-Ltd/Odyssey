@@ -38,6 +38,87 @@ public class Listing {
     private List<String> images;
 
     private boolean active;
+
+    public int getListing_id() {
+        return listing_id;
+    }
+
+    public void setListing_id(int listing_id) {
+        this.listing_id = listing_id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
+    }
+
+    public listing_type getListing_type() {
+        return listing_type;
+    }
+
+    public void setListing_type(listing_type listing_type) {
+        this.listing_type = listing_type;
+    }
+
+    public Category getListingcategory() {
+        return Listingcategory;
+    }
+
+    public void setListingcategory(Category listingcategory) {
+        Listingcategory = listingcategory;
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isInactive() {
+        return Inactive;
+    }
+
+    public void setInactive(boolean inactive) {
+        Inactive = inactive;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
     private boolean Inactive;
 
     @ManyToOne

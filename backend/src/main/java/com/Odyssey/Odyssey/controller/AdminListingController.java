@@ -26,7 +26,8 @@ public class AdminListingController {
     private ShopService shopService;
 
     @PostMapping
-    public ResponseEntity<Listing>CreateListing(@RequestBody CreateListingRequest req, @RequestHeader("Authorization")String jwt) throws Exception {
+    public ResponseEntity<Listing>CreateListing(@RequestBody CreateListingRequest req,
+                                                @RequestHeader("Authorization")String jwt) throws Exception {
         User user=userService.findUserByJwtToken(jwt);
         Shop shop=shopService.findShopById(req.getShopID());
         Listing listing=listingService.CreatetListing(req,req.getCategory(),shop);
