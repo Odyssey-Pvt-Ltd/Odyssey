@@ -4,7 +4,7 @@
             "outputFile": "com.example.odyssey_app-mergeDebugResources-24:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/nethminiwickramasinghe/Documents/SDGP/Test1-Odyssey App/Odyssey3/android/app/src/main/res/values-night/styles.xml",
+                    "source": "E:\\Odyssey\\frontend\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
