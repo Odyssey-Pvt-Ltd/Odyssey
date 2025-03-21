@@ -22,10 +22,18 @@ import java.util.ArrayList;
 public class User {
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long user_id) {
+        this.id = user_id;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    private Long user_id;
+    private Long id;
 
 
     @NotBlank(message = "Name is required")
