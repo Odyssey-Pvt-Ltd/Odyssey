@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass">
+
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/controller/ShopController.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +58,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GenerateSecretKey.executor": "Run",
@@ -75,12 +78,28 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.OdysseyApplication">
     <configuration name="GenerateSecretKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GenerateSecretKey" />
       <module name="Odyssey" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OdysseyApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Odyssey" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Odyssey.Odyssey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Odyssey.Odyssey" />
+      <option name="MAIN_CLASS_NAME" value="com.Odyssey.Odyssey.OdysseyApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,6 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="Application.GenerateSecretKey" />
         <item itemvalue="Application.GenerateSecretKey" />
         <item itemvalue="Application.GenerateSecretKey" />
@@ -104,8 +124,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -131,6 +151,8 @@
       <workItem from="1742390589014" duration="9926000" />
       <workItem from="1742462237872" duration="4621000" />
       <workItem from="1742467158495" duration="307000" />
+
+
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />

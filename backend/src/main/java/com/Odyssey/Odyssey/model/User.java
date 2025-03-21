@@ -30,6 +30,7 @@ public class User {
     private Long id;
 
 
+
     @NotBlank(message = "Name is required")
     private String name;
 
@@ -152,6 +153,14 @@ public class User {
 
     public void setAddress(@NotBlank(message = "Address required") String address) {
         this.address = address;
+    }
+
+    public Long getId() {
+        return user_id;
+    }
+
+    public void setId(Long id) {
+        this.user_id = id;
     }
 
 
