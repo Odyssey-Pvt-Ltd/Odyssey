@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" afterDir="false" />
-    </list>
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +57,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GenerateSecretKey.executor": "Run",
+    "JUnit.OdysseyApplicationTests.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -67,7 +66,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.OdysseyApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Binara",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -75,6 +74,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.OdysseyApplication">
@@ -112,9 +116,8 @@
       <list>
         <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="Application.GenerateSecretKey" />
-        <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="Application.GenerateSecretKey" />
-        <item itemvalue="JUnit.OdysseyApplicationTests" />
+        <item itemvalue="Application.GenerateSecretKey" />
       </list>
     </recent_temporary>
   </component>
@@ -148,6 +151,7 @@
       <workItem from="1742390589014" duration="9926000" />
       <workItem from="1742462237872" duration="4621000" />
       <workItem from="1742467158495" duration="307000" />
+      <workItem from="1742521073958" duration="4849000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
@@ -273,6 +277,7 @@
     <MESSAGE value="adding logging to signup method" />
     <MESSAGE value="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass" />
     <MESSAGE value="fixing signin" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing signin" />
+    <MESSAGE value="changed id to user_id" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed id to user_id" />
   </component>
 </project>
