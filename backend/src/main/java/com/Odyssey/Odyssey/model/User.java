@@ -21,9 +21,14 @@ import java.util.ArrayList;
 @Table(name = "users")
 public class User {
 
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id") private Long user_id;
+    @Column(name = "user_id")
+    private Long id;
+
 
 
     @NotBlank(message = "Name is required")
@@ -66,6 +71,14 @@ public class User {
 
     public void setFavorites(List<ShopDTO> favorites) {
         this.favorites = favorites;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long user_id) {
+        this.id = user_id;
     }
 
     @ElementCollection

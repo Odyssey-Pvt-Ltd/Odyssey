@@ -115,7 +115,7 @@ public class ShopServiceImp implements ShopService {
     }
 
     @Override
-    public Shop UpdateShopStatus(Long ID) throws Exception {
+    public Shop updateShopStatus(Long ID) throws Exception {
 
         Shop shop = findShopById(ID);
 
