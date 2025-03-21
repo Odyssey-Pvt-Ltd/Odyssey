@@ -49,7 +49,7 @@ public class AdminShopController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<MassageResponse> DeleteShop(
-            @RequestBody CreateShopRequest req,
+
             @RequestHeader("Authorization") String jwt,
             @PathVariable Long id
     ) throws Exception {
@@ -64,7 +64,7 @@ public class AdminShopController {
 
     @PutMapping("/{id}/Status")
     public ResponseEntity<Shop> UpdateShopStatus(
-            @RequestBody CreateShopRequest req,
+
             @RequestHeader("Authorization") String jwt,
             @PathVariable Long id
     ) throws Exception {
@@ -78,7 +78,7 @@ public class AdminShopController {
 
     @GetMapping("/user")
     public ResponseEntity<Shop> findShopByUserId(
-            @RequestBody CreateShopRequest req,
+
             @RequestHeader("Authorization") String jwt
 
     ) throws Exception {
