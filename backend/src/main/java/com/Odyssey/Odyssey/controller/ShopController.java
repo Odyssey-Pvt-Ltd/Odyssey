@@ -51,7 +51,7 @@ public class ShopController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity Shop findShopById(
+    public ResponseEntity <Shop> findShopById(
 
             @RequestHeader("Authorization") String jwt,
             @PathVariable Long id
