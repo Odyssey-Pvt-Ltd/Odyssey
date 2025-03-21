@@ -2,6 +2,7 @@ package com.Odyssey.Odyssey.controller;
 
 
 import com.Odyssey.Odyssey.Request.CreateShopRequest;
+import com.Odyssey.Odyssey.dto.ShopDTO;
 import com.Odyssey.Odyssey.model.Shop;
 import com.Odyssey.Odyssey.model.User;
 import com.Odyssey.Odyssey.service.ShopService;
@@ -34,7 +35,7 @@ public class ShopController {
 
         List<Shop> shop = shopService.searchShops(keyword);
 
-        return new ResponseEntity<>(shop, HttpStatus.CREATED);
+        return new ResponseEntity<>(shop, HttpStatus.OK);
     }
 
     @GetMapping()
@@ -47,7 +48,7 @@ public class ShopController {
 
         List<Shop> shop = shopService.getAllShops();
 
-        return new ResponseEntity<>(shop, HttpStatus.CREATED);
+        return new ResponseEntity<>(shop, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -61,7 +62,21 @@ public class ShopController {
 
         Shop shop = shopService.findShopById(id);
 
-        return new ResponseEntity<>(shop, HttpStatus.CREATED);
+        return new ResponseEntity<>(shop, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}/add-favorites")
+    public ResponseEntity <ShopDTO> addFavorites(
+
+            @RequestHeader("Authorization") String jwt,
+            @RequestParam Long id
+
+    ) throws Exception {
+        User user =userService.findUserByJwtToken(jwt);
+
+        ShopDTO shop = shopService.addToFavorites(id, user);
+
+        return new ResponseEntity<>(shop, HttpStatus.OK);
     }
 
 
