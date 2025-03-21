@@ -22,13 +22,7 @@ import java.util.ArrayList;
 public class User {
 
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long user_id) {
-        this.id = user_id;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -76,6 +70,14 @@ public class User {
 
     public void setFavorites(List<ShopDTO> favorites) {
         this.favorites = favorites;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long user_id) {
+        this.id = user_id;
     }
 
     @ElementCollection
