@@ -25,7 +25,7 @@ public class Listing {
 
     //private Location location;
 
-    private int price;
+    private Long price;
 
     @NotBlank(message = "Required listing type")
     private listing_type listing_type;
@@ -38,9 +38,21 @@ public class Listing {
     private List<String> images;
 
     private boolean active;
+    private boolean Inactive;
 
     @ManyToOne
     @JoinColumn(name = "vendor_id", nullable = false)
     private Shop shop;
+
+//    public void setPrice(Long price) {
+//    }
+
+//    public Category getListingcategory() {
+//        return Listingcategory;
+//    }
+//
+//    public void setListingcategory(Category listingcategory) {
+//        Listingcategory = listingcategory;
+//    }
 
 }

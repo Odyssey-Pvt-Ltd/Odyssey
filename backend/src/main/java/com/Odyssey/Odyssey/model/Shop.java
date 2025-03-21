@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ public class Shop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long shop_id;
 
     @OneToOne
     private User owner;
@@ -32,12 +31,12 @@ public class Shop {
 
     private String phone;
 
-    public Long getId() {
-        return id;
+    public Long getShop_id() {
+        return shop_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setShop_id(Long shop_id) {
+        this.shop_id = shop_id;
     }
 
     public User getOwner() {
