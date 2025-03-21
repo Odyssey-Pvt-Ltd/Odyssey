@@ -86,7 +86,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.OdysseyApplication">
+  <component name="RunManager" selected="Application.GenerateSecretKey">
     <configuration name="GenerateSecretKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GenerateSecretKey" />
       <module name="Odyssey" />
