@@ -122,7 +122,7 @@ public class Listing {
     private boolean Inactive;
 
     @ManyToOne
-    @JoinColumn(name = "vendor_id", nullable = false)
+    @JoinColumn(name = "shop_id", nullable = false)
     private Shop shop;
 
 //    public void setPrice(Long price) {
