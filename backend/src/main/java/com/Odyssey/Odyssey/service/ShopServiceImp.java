@@ -8,6 +8,7 @@ import com.Odyssey.Odyssey.model.User;
 import com.Odyssey.Odyssey.repository.AddressRepository;
 import com.Odyssey.Odyssey.repository.ShopRepository;
 import com.Odyssey.Odyssey.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -53,6 +54,7 @@ public class ShopServiceImp implements ShopService {
         return shopRepository.save(shop);
     }
 
+    @Transactional
     @Override
     public void deleteShop(Long shopId) throws Exception {
 
@@ -119,7 +121,7 @@ public class ShopServiceImp implements ShopService {
 
         Shop shop = findShopById(ID);
 
-        //shop.setOnline(!shop.isOnline());
+        shop.setOnline(!shop.getOnline());
 
         return shopRepository.save(shop);
     }

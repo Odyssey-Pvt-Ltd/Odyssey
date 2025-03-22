@@ -6,11 +6,12 @@ import java.util.List;
 
 
 public class CreateShopRequest {
-
     private Long userId;
     private String shopName;
     private String description;
     private Address address;
+    private String phoneNumber;
+    private List<String> images;
 
     public Long getUserId() {
         return userId;
@@ -59,7 +60,4 @@ public class CreateShopRequest {
     public void setImages(List<String> images) {
         this.images = images;
     }
-
-    private String phoneNumber;
-    private List<String> images;
 }
