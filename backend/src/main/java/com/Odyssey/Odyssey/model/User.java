@@ -56,7 +56,7 @@ public class User {
     public void setFavorites(List<ShopDTO> favorites) {
         this.favorites = favorites;
     }
-    
+
     public Long getId() {
         return id;
     }

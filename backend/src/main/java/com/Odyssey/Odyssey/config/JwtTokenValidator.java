@@ -37,7 +37,6 @@ public class JwtTokenValidator extends OncePerRequestFilter {
 
                 SecretKey key = Keys.hmacShaKeyFor(Base64.getDecoder().decode(SECRET_KEY));
 
-
                 Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
 
                 String email = String.valueOf(claims.get("email"));
@@ -51,8 +50,9 @@ public class JwtTokenValidator extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
 
             } catch (Exception e) {
+                logger.error("Invalid JWT token: " + e.getMessage(), e);
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                response.getWriter().write("Invalid Token");
+                response.getWriter().write("Invalid Token: " + e.getMessage());
                 return;
             }
         }

@@ -1,6 +1,8 @@
 package com.Odyssey.Odyssey.Request;
 
 import com.Odyssey.Odyssey.model.Category;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import  lombok.Data;
 
 import java.util.List;
@@ -8,9 +10,13 @@ import java.util.List;
 @Data
 public class CreateListingRequest {
 
+    @NotBlank(message = "Title is required")
     private String title;
+
+    @NotBlank(message = "Description is required")
     private String description;
-//    private String author;
+
+    @NotNull(message = "Price is required")
     private Long price;
 
     private Category category;

@@ -55,6 +55,10 @@ public class AuthController {
             throw new RuntimeException("Email is already used");
         }
 
+        if (!user.getPassword().equals(user.getConfirmPassword())) {
+            throw new IllegalArgumentException("Password and Confirm Password do not match");
+        }
+
         // Ensure userType is set before saving
         if (user.getUserType() == null) {
             user.setUserType(USER_ROLE.ROLE_CUSTOMER);
