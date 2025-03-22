@@ -17,7 +17,7 @@ public class Shop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long shop_id;
+    private Long id;
 
     @OneToOne
     private User owner;
@@ -31,12 +31,12 @@ public class Shop {
 
     private String phone;
 
-    public Long getShop_id() {
-        return shop_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setShop_id(Long shop_id) {
-        this.shop_id = shop_id;
+    public void setId(Long shop_id) {
+        this.id = shop_id;
     }
 
     public User getOwner() {

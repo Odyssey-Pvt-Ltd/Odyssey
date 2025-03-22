@@ -101,7 +101,7 @@ public class ShopServiceImp implements ShopService {
         ShopDTO dto = new ShopDTO();
         dto.setDescription(shop.getDescription());
         dto.setTitle(shop.getName());
-        dto.setId(shop.getShop_id());
+        dto.setId(shop.getId());
 
         if(user.getFavorites().contains(dto)){
             user.getFavorites().remove(dto);
