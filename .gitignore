@@ -33,10 +33,7 @@ build/
 # Rasa model files
 models/
 *.tar.gz
-credentials.yml
-endpoints.yml
-config.yml
-domain.yml
+
 data/
 tests/
 logs/
