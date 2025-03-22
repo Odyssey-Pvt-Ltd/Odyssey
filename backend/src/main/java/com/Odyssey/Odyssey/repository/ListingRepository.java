@@ -10,6 +10,6 @@ import java.util.List;
 public interface ListingRepository extends JpaRepository<Listing, Long> {
     List<Listing> findByShopId(long shopId);
 
-    @Query("SELECT f FROM Listing f WHERE f.title LIKE %:keyword% OR f.Listingcategory.name LIKE %:keyword%")
-    List<Listing> searchListing(@Param("keyword") String keyword);
+    @Query("SELECT f from Listing f WHERE f.title LIKE %:keyword% OR f.Listingcategory.name LIKE %:keyword%")
+    List<Listing>SearchListing(@Param("keyword")String keyword);
 }
