@@ -5,6 +5,7 @@ import com.Odyssey.Odyssey.config.JwtProvider;
 import com.Odyssey.Odyssey.model.User;
 import com.Odyssey.Odyssey.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
@@ -28,9 +29,9 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public User findUserByEmail(String email) throws Exception {
+    public User findUserByEmail(String email) throws UsernameNotFoundException {
         return userRepository.findByEmail(email)
-                .orElseThrow(() -> new Exception("User not found"));
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
     }
 
 }
