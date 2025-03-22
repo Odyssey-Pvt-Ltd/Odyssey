@@ -43,8 +43,8 @@ public class SecurityConfig {
         return request -> {
             CorsConfiguration cfg = new CorsConfiguration();
             cfg.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Allow requests from this origin
-            cfg.setAllowedMethods(Collections.singletonList("*")); // Allow all HTTP methods
-            cfg.setAllowedHeaders(Collections.singletonList("*")); // Allow all headers
+            cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+            cfg.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
             cfg.setAllowCredentials(true); // Allow credentials
             cfg.setExposedHeaders(Collections.singletonList("Authorization")); // Expose Authorization header
             cfg.setMaxAge(3600L); // Cache preflight response for 1 hour
