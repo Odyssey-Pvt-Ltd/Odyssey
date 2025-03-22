@@ -88,10 +88,9 @@ public class ShopServiceImp implements ShopService {
 
     @Override
     public Shop findShopByUserId(Long userId) throws Exception {
-
         Shop shop = shopRepository.findByOwnerId(userId);
-        if(shop == null){
-            throw new Exception("Shop not found");
+        if (shop == null) {
+            throw new Exception("Shop not found for user ID: " + userId);
         }
         return shop;
     }
