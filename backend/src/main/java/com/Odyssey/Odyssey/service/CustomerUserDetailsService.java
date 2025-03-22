@@ -34,7 +34,7 @@ public class CustomerUserDetailsService implements UserDetailsService {
 
         User user = userOptional.get();
         System.out.println("User found: " + user.getName());
-        USER_ROLE role = user.getRole();
+        USER_ROLE role = user.getUserType();
 
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority(role.toString()));
