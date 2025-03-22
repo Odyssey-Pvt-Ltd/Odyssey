@@ -5,10 +5,19 @@ __pycache__/
 *.pyo
 *.pyd
 
+# Rasa configuration and checkpoint files
+*.yml~
+*.config
+checkpoints/
+*.pkl
+*.gz
+*.zip
+
 # Virtual environment
 rasa_env/
 venv/
 .env
+.venv/
 
 # Cache and temporary files
 *.cache/
@@ -19,6 +28,7 @@ venv/
 .dist/
 node_modules/
 .DS_Store
+build/
 
 # Rasa model files
 models/
@@ -30,6 +40,14 @@ domain.yml
 data/
 tests/
 logs/
+*.test.yml
+*.md
+
+# Rasa NLU and Core data files
+data/
+*.nlu.yml
+*.stories.yml
+*.rules.yml
 
 # IDEs
 .idea/
@@ -50,3 +68,4 @@ Thumbs.db
 # System files
 Thumbs.db
 desktop.ini
+.DS_Store
