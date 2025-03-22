@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'manual_planner_screen1.dart';
-import 'automatic_planner_screen1.dart';
+import 'package:odyssey_app/screens/chat_bot.dart';
+import 'package:odyssey_app/screens/manual_planner_screen1.dart';
+
+
 
 class PlanTripScreen extends StatelessWidget {
   const PlanTripScreen({super.key});
@@ -42,9 +44,9 @@ class PlanTripScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            actionButton(context, "Plan Manually", const ManualPlannerPage()),
+            actionButton(context, "Plan Manually", ManualPlannerPage()),
             const SizedBox(height: 12),
-            actionButton(context, "Automatic", const AutomaticPlannerScreen()),
+            actionButton(context, "Automatic", ChatScreen()),
             const SizedBox(height: 16),
             Container(
               padding: const EdgeInsets.all(12),
