@@ -18,7 +18,6 @@ import java.util.Optional;
 @Service
 public class CustomerUserDetailsService implements UserDetailsService {
 
-
     @Autowired
     private UserRepository userRepository;
 
@@ -34,6 +33,8 @@ public class CustomerUserDetailsService implements UserDetailsService {
 
         User user = userOptional.get();
         System.out.println("User found: " + user.getName());
+
+        // Use getUserType() instead of getRole()
         USER_ROLE role = user.getUserType();
 
         List<GrantedAuthority> authorities = new ArrayList<>();
@@ -46,41 +47,3 @@ public class CustomerUserDetailsService implements UserDetailsService {
         );
     }
 }
-
-
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        System.out.println("Searching for user with email: " + username); // Log the email being searched
-//        Optional<User> userOptional = userRepository.findByEmail(username);
-//
-//        if (userOptional.isEmpty()) {
-//            System.out.println("User not found: " + username); // Log if user is not found
-//            throw new UsernameNotFoundException("User not found: " + username);
-//        }
-//
-//        User user = userOptional.get();
-//        System.out.println("User found: " + user.getName()); // Log the found user
-//        USER_ROLE role = user.getRole();
-//
-//        List<GrantedAuthority> authorities = new ArrayList<>();
-//        authorities.add(new SimpleGrantedAuthority(role.toString()));
-//
-//        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
-//    }
-//}
-/*
-        if (user.isPresent()) {
-            throw new UsernameNotFoundException("User not found" + username);
-        }
-
-        USER_ROLE role = user.get().getRole();
-
-        List<GrantedAuthority> authorities = new ArrayList<>();
-
-        authorities.add(new SimpleGrantedAuthority(role.toString()));
-
-        return new org.springframework.security.core.userdetails.User(user.get().getEmail(), user.get().getPassword(), authorities);
-    }
-}
-
- */

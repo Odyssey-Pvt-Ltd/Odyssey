@@ -90,6 +90,4 @@ public class AdminShopController {
         return new ResponseEntity<>(shop, HttpStatus.CREATED);
     }
 
-
-
 }

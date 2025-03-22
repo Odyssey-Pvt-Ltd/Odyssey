@@ -8,6 +8,7 @@ import com.Odyssey.Odyssey.model.User;
 import com.Odyssey.Odyssey.repository.AddressRepository;
 import com.Odyssey.Odyssey.repository.ShopRepository;
 import com.Odyssey.Odyssey.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -44,15 +45,17 @@ public class ShopServiceImp implements ShopService {
     public Shop updateShop(Long shopId, CreateShopRequest updateRequest) throws Exception {
         Shop shop = findShopById(shopId);
 
-        if (shop.getDescription() != null) {
+        if (updateRequest.getDescription() != null) {
             shop.setDescription(updateRequest.getDescription());
         }
-        if (shop.getName() != null) {
+        if (updateRequest.getShopName() != null) {
             shop.setName(updateRequest.getShopName());
         }
         return shopRepository.save(shop);
     }
 
+
+    @Transactional
     @Override
     public void deleteShop(Long shopId) throws Exception {
 
@@ -74,14 +77,14 @@ public class ShopServiceImp implements ShopService {
 
     @Override
     public Shop findShopById(Long ID) throws Exception {
-
         Optional<Shop> opt = shopRepository.findById(ID);
 
         if(opt.isEmpty()){
-            throw new Exception("Email already exists");
+            throw new Exception("Shop not found");
         }
         return opt.get();
     }
+
 
     @Override
     public Shop findShopByUserId(Long userId) throws Exception {
@@ -95,7 +98,6 @@ public class ShopServiceImp implements ShopService {
 
     @Override
     public ShopDTO addToFavorites(Long shopId, User user) throws Exception {
-
         Shop shop = findShopById(shopId);
 
         ShopDTO dto = new ShopDTO();
@@ -103,24 +105,26 @@ public class ShopServiceImp implements ShopService {
         dto.setTitle(shop.getName());
         dto.setId(shop.getId());
 
-        if(user.getFavorites().contains(dto)){
-            user.getFavorites().remove(dto);
+        boolean isFavorite = user.getFavorites().stream().anyMatch(fav -> fav.getId().equals(dto.getId()));
+
+        if (isFavorite) {
+            user.getFavorites().removeIf(fav -> fav.getId().equals(dto.getId()));
+        } else {
+            user.getFavorites().add(dto);
         }
 
-        else user.getFavorites().add(dto);
-
         userRepository.save(user);
-
         return dto;
     }
 
+
     @Override
     public Shop updateShopStatus(Long ID) throws Exception {
-
         Shop shop = findShopById(ID);
 
-        //shop.setOnline(!shop.isOnline());
+        shop.setOnline(!shop.getOnline());
 
         return shopRepository.save(shop);
     }
+
 }
