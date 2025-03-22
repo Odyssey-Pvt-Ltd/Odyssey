@@ -45,7 +45,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///C:/Users/Chathusha%20Gunarathna/AppData/Local/Flutter/flutter/packages/flutter",
+      "rootUri": "file:///C:/src/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -57,7 +57,7 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///C:/Users/Chathusha%20Gunarathna/AppData/Local/Flutter/flutter/packages/flutter_test",
+      "rootUri": "file:///C:/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -111,7 +111,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///C:/Users/Chathusha%20Gunarathna/AppData/Local/Flutter/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///C:/src/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -170,10 +170,10 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2025-02-18T10:54:52.613046Z",
+  "generated": "2025-03-22T15:16:26.900111Z",
   "generator": "pub",
   "generatorVersion": "3.7.0",
-  "flutterRoot": "file:///C:/Users/Chathusha%20Gunarathna/AppData/Local/Flutter/flutter",
+  "flutterRoot": "file:///C:/src/flutter",
   "flutterVersion": "3.29.0",
   "pubCache": "file:///C:/Users/Chathusha%20Gunarathna/AppData/Local/Pub/Cache"
 }
