@@ -92,17 +92,16 @@ public class AuthController {
 
 
     @PostMapping("/SignIn")
-    public ResponseEntity<AuthResponse>SignIn(@RequestBody LoginRequest loginRequest){
-
+    public ResponseEntity<AuthResponse> SignIn(@RequestBody LoginRequest loginRequest) {
         System.out.println("SignIn endpoint called with: " + loginRequest);
 
-        String username = loginRequest.getUsername();
-        String password = loginRequest.getPassword();
+        String email = loginRequest.getEmail(); // Use email as the identifier
+        String password = loginRequest.getPassword(); // Raw password
 
-        Authentication authentication = authenticate(username, password);
+        Authentication authentication = authenticate(email, password);
 
-        Collection<? extends GrantedAuthority>authorities=authentication.getAuthorities();
-        String role=authorities.isEmpty()?null:authorities.iterator().next().getAuthority();
+        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+        String role = authorities.isEmpty() ? null : authorities.iterator().next().getAuthority();
 
         String jwt = jwtProvider.generateToken(authentication);
 
@@ -112,18 +111,17 @@ public class AuthController {
         authResponse.setRole(USER_ROLE.valueOf(role));
 
         return new ResponseEntity<>(authResponse, HttpStatus.OK);
-
     }
 
-
-    private Authentication authenticate(String username, String password) {
-
-        UserDetails userDetails = customerUserDetailsService.loadUserByUsername(username);
-
-        if(userDetails==null){
+    private Authentication authenticate(String email, String password) {
+        UserDetails userDetails = customerUserDetailsService.loadUserByUsername(email); // Use email to load user
+        if (userDetails == null) {
             throw new BadCredentialsException("User not found");
         }
-        if(!passwordEncoder.matches(password, userDetails.getPassword())){
+        System.out.println("Raw password from request: " + password);
+        System.out.println("Hashed password from database: " + userDetails.getPassword());
+
+        if (!passwordEncoder.matches(password, userDetails.getPassword())) {
             throw new BadCredentialsException("Wrong password");
         }
         return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
