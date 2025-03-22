@@ -3,7 +3,7 @@ package com.Odyssey.Odyssey.controller;
 import com.Odyssey.Odyssey.Request.CreateShopRequest;
 import com.Odyssey.Odyssey.model.Shop;
 import com.Odyssey.Odyssey.model.User;
-import com.Odyssey.Odyssey.response.MassageResponse;
+import com.Odyssey.Odyssey.response.MessageResponse;
 import com.Odyssey.Odyssey.service.ShopService;
 import com.Odyssey.Odyssey.service.UserService;
 import jakarta.persistence.ManyToOne;
@@ -48,7 +48,7 @@ public class AdminShopController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<MassageResponse> DeleteShop(
+    public ResponseEntity<MessageResponse> DeleteShop(
 
             @RequestHeader("Authorization") String jwt,
             @PathVariable Long id
@@ -57,7 +57,7 @@ public class AdminShopController {
 
         shopService.deleteShop(id);
 
-        MassageResponse res = new MassageResponse();
+        MessageResponse res = new MessageResponse();
         res.setMessage("Successfully deleted shop");
         return new ResponseEntity<>(res, HttpStatus.OK);
     }

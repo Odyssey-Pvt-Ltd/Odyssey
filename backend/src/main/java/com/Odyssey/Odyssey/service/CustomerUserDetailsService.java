@@ -33,7 +33,7 @@ public class CustomerUserDetailsService implements UserDetailsService {
         }
 
         User user = userOptional.get();
-        System.out.println("User found: " + user.getEmail()); // Log the found user
+        System.out.println("User found: " + user.getName()); // Log the found user
         USER_ROLE role = user.getRole();
 
         List<GrantedAuthority> authorities = new ArrayList<>();
