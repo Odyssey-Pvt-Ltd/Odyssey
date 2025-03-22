@@ -17,6 +17,7 @@ import io.jsonwebtoken.security.Keys;
 
 import javax.crypto.SecretKey;
 import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 import static com.Odyssey.Odyssey.config.JwtConstant.SECRET_KEY;
@@ -34,7 +35,8 @@ public class JwtTokenValidator extends OncePerRequestFilter {
 
             try{
 
-                SecretKey key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+                SecretKey key = Keys.hmacShaKeyFor(Base64.getDecoder().decode(SECRET_KEY));
+
 
                 Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
 
