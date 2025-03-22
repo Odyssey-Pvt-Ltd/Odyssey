@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="planing trip error corrections" />
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="other files">
+      <change afterPath="$PROJECT_DIR$/frontend/lib/notes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -454,7 +457,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742620480421</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="other files">
+      <option name="closed" value="true" />
+      <created>1742620566243</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1742620566243</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,10 +498,10 @@
     <MESSAGE value="fixing signin" />
     <MESSAGE value="adding assets" />
     <MESSAGE value="dart tool" />
-    <MESSAGE value="other files" />
     <MESSAGE value="screens" />
     <MESSAGE value="planing trip" />
     <MESSAGE value="planing trip error corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="planing trip error corrections" />
+    <MESSAGE value="other files" />
+    <option name="LAST_COMMIT_MESSAGE" value="other files" />
   </component>
 </project>
