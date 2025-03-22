@@ -66,18 +66,15 @@ public class ShopController {
     }
 
     @PutMapping("/{id}/add-favorites")
-    public ResponseEntity <ShopDTO> addFavorites(
-
+    public ResponseEntity<ShopDTO> addFavorites(
             @RequestHeader("Authorization") String jwt,
-            @RequestParam Long id
-
+            @PathVariable Long id // Changed from @RequestParam to @PathVariable
     ) throws Exception {
-        User user =userService.findUserByJwtToken(jwt);
-
+        User user = userService.findUserByJwtToken(jwt);
         ShopDTO shop = shopService.addToFavorites(id, user);
-
         return new ResponseEntity<>(shop, HttpStatus.OK);
     }
+
 
 
 

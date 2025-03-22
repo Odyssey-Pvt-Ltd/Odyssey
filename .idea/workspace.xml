@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="romevoed duplicate message rsponse classes and changed user.getemail to .getname in customeruserdetail class">
-
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +104,7 @@
       <recent name="E:\Odyssey\frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.manual_planner_screen1.dart">
+  <component name="RunManager" selected="Spring Boot.OdysseyApplication">
     <configuration name="GenerateSecretKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GenerateSecretKey" />
       <module name="Odyssey" />
@@ -148,10 +145,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter.manual_planner_screen1.dart" />
-        <item itemvalue="Flutter.main.dart" />
-        <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="Application.GenerateSecretKey" />
+        <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="Application.GenerateSecretKey" />
       </list>
     </recent_temporary>
@@ -293,7 +288,6 @@
       <option name="project" value="LOCAL" />
       <updated>1742228526500</updated>
     </task>
-
     <task id="LOCAL-00014" summary="adding assets">
       <option name="closed" value="true" />
       <created>1742538394325</created>
@@ -471,7 +465,6 @@
       <updated>1742620566243</updated>
     </task>
     <option name="localTasksCounter" value="36" />
-
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +495,6 @@
     <MESSAGE value="adding logging to signup method" />
     <MESSAGE value="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass" />
     <MESSAGE value="fixing signin" />
-
     <MESSAGE value="adding assets" />
     <MESSAGE value="dart tool" />
     <MESSAGE value="screens" />
@@ -510,6 +502,5 @@
     <MESSAGE value="planing trip error corrections" />
     <MESSAGE value="other files" />
     <option name="LAST_COMMIT_MESSAGE" value="other files" />
-
   </component>
 </project>
