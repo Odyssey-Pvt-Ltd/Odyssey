@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="other files">
-      <change afterPath="$PROJECT_DIR$/frontend/lib/notes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="romevoed duplicate message rsponse classes and changed user.getemail to .getname in customeruserdetail class">
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Note.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Binara" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,6 +68,7 @@
     &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
     &quot;Flutter.manual_planner_screen1.dart.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.OdysseyApplicationTests.executor&quot;: &quot;Run&quot;,
+ main
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -77,11 +79,9 @@
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.OdysseyApplication.executor&quot;: &quot;Run&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;chathusa__feature&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+
+    &quot;git-widget-placeholder&quot;: &quot;Binara&quot;,
+
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/Odyssey/frontend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -92,11 +92,13 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+ Binara
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;mysql&quot;
     ]
+
   }
 }</component>
   <component name="RecentsManager">
@@ -183,7 +185,7 @@
       <workItem from="1742390589014" duration="9926000" />
       <workItem from="1742462237872" duration="4621000" />
       <workItem from="1742467158495" duration="307000" />
-      <workItem from="1742521073958" duration="4849000" />
+      <workItem from="1742578639388" duration="753000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
@@ -289,6 +291,7 @@
       <option name="project" value="LOCAL" />
       <updated>1742228526500</updated>
     </task>
+
     <task id="LOCAL-00014" summary="adding assets">
       <option name="closed" value="true" />
       <created>1742538394325</created>
@@ -466,6 +469,7 @@
       <updated>1742620566243</updated>
     </task>
     <option name="localTasksCounter" value="36" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,6 +500,7 @@
     <MESSAGE value="adding logging to signup method" />
     <MESSAGE value="added getter and setter methods for phonenumber and address in user class with@notblan annotations and removed add @valid in authcontrollerclass" />
     <MESSAGE value="fixing signin" />
+
     <MESSAGE value="adding assets" />
     <MESSAGE value="dart tool" />
     <MESSAGE value="screens" />
@@ -503,5 +508,6 @@
     <MESSAGE value="planing trip error corrections" />
     <MESSAGE value="other files" />
     <option name="LAST_COMMIT_MESSAGE" value="other files" />
+
   </component>
 </project>

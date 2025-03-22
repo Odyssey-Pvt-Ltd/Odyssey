@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +35,8 @@ public class Shop {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long shop_id) {
+        this.id = shop_id;
     }
 
     public User getOwner() {
