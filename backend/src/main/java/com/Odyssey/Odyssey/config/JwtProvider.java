@@ -20,7 +20,7 @@ public class JwtProvider {
 
     public String generateToken(Authentication auth) {
         Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
-        String roles = populateAthoraities(authorities);
+        String roles = populateAuthorities(authorities);
 
         String jwt = Jwts.builder().setIssuedAt(new Date())
                 .setExpiration((new Date(new Date().getTime() + 86400000)))
@@ -42,10 +42,10 @@ public class JwtProvider {
         return email;
     }
 
-    private String populateAthoraities(Collection<? extends GrantedAuthority> authorities) {
+    private String populateAuthorities(Collection<? extends GrantedAuthority> authorities) {
         Set<String> auths = new HashSet<>();
 
-        for (GrantedAuthority authority : authorities) {
+        for (GrantedAuthority authority : authorities) { 
             auths.add(authority.getAuthority());
         }
 
