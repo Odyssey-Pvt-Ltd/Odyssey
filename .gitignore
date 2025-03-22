@@ -1,1 +1,25 @@
 ".idea/" 
+# Python
+*.pyc
+*.pyo
+__pycache__
+venv/
+rasa_env/
+
+# Rasa
+models/
+credentials.yml
+endpoints.yml
+config.yml
+domain.yml
+data/
+tests/
+logs/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
