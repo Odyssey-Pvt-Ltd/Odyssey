@@ -6,12 +6,14 @@ intents:
   - affirm
   - deny
   - Weather
- 
- 
 
+  
 responses:
   utter_greet:
   - text: "Hey! How are you?"
+
+  utter_weather:
+  - text: "Weather is great today"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
