@@ -1,13 +1,28 @@
 ".idea/" 
-# Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
 *.pyc
 *.pyo
-__pycache__
-venv/
-rasa_env/
+*.pyd
 
-# Rasa
+# Virtual environment
+rasa_env/
+venv/
+.env
+
+# Cache and temporary files
+*.cache/
+*.pytest_cache/
+*.mypy_cache/
+.nox/
+.tox/
+.dist/
+node_modules/
+.DS_Store
+
+# Rasa model files
 models/
+*.tar.gz
 credentials.yml
 endpoints.yml
 config.yml
@@ -20,6 +35,18 @@ logs/
 .idea/
 .vscode/
 
+# Rasa training files
+  *.db
+ *. json
+ *.log
+* .sqlite
+* .lock
+* .tmp
+
 # OS files
 .DS_Store
 Thumbs.db
+
+# System files
+Thumbs.db
+desktop.ini
