@@ -31,7 +31,7 @@ public class AdminListingController {
         User user=userService.findUserByJwtToken(jwt);
         Shop shop=shopService.findShopById(req.getShopID());
         Listing listing=listingService.CreatetListing(req,req.getCategory(),shop);
-        return new ResponseEntity<>(listing, HttpStatus.CREATED);
+        return new ResponseEntity<>(listing, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
@@ -40,14 +40,14 @@ public class AdminListingController {
         listingService.DeleteListing(id);
         MessageResponse res=new MessageResponse();
         res.setMessage("Successfully deleted listing");
-        return new ResponseEntity<>(res, HttpStatus.CREATED);
+        return new ResponseEntity<>(res, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Listing>updateListingAvailabilityStatus(@PathVariable Long id, @RequestHeader("Authorization")String jwt) throws Exception {
         User user=userService.findUserByJwtToken(jwt);
         Listing listing=listingService.updateListingAvailabilityStatus(id);
-        return new ResponseEntity<>(listing,HttpStatus.CREATED);
+        return new ResponseEntity<>(listing,HttpStatus.OK);
     }
 
 
