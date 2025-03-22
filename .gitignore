@@ -67,7 +67,7 @@ Thumbs.db
 desktop.ini
 .DS_Store
 *.json
-/backend/.rasa/cache
-backend/.rasa/cache/cache.db
-/backend
+
+# Backend cache
+/backend/.rasa/cache/
 backend/.rasa/cache/cache.db
