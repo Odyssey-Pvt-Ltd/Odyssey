@@ -1,6 +1,5 @@
 package com.Odyssey.Odyssey.model;
 
-
 import com.Odyssey.Odyssey.dto.ShopDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -8,11 +7,8 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-import java.util.List;
 import java.util.ArrayList;
-
-
-
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -21,49 +17,37 @@ import java.util.ArrayList;
 @Table(name = "users")
 public class User {
 
-
-
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Use IDENTITY for auto-increment
     @Column(name = "user_id")
     private Long id;
-
-
 
     @NotBlank(message = "Name is required")
     private String name;
 
     @NotBlank(message = "Email is required")
-    @Email
-    @Column(unique = true)
+    @Email(message = "Invalid email format")
+    @Column(unique = true, nullable = false)
     private String email;
 
-
-    @NotBlank(message = "Phone number required")
+    @NotBlank(message = "Phone number is required")
     private String phoneNumber;
 
-//    @Getter
-//    @Setter
-
-    @NotBlank(message = "Address required")
+    @NotBlank(message = "Address is required")
     private String address;
 
-//    @NotBlank(message = "user type required (vendor/customer)")
     @Enumerated(EnumType.STRING)
-    private USER_ROLE userType;
+    @Column(nullable = false)
+    private USER_ROLE userType = USER_ROLE.ROLE_CUSTOMER; // Default role
 
-
-//    @JsonIgnore
     @NotBlank(message = "Password is required")
     private String password;
 
-    @Transient
-    @NotBlank(message = "Confirm Password is required")
+    @Transient // Not persisted in the database
     private String confirmPassword;
 
-    @Enumerated(EnumType.STRING)
-    private USER_ROLE userType = USER_ROLE.ROLE_CUSTOMER; // Default role
+    @ElementCollection
+    private List<ShopDTO> favorites = new ArrayList<>();
 
     public List<ShopDTO> getFavorites() {
         return favorites;
@@ -72,47 +56,21 @@ public class User {
     public void setFavorites(List<ShopDTO> favorites) {
         this.favorites = favorites;
     }
-
+    
     public Long getId() {
         return id;
     }
 
-    public void setId(Long user_id) {
-        this.id = user_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    @ElementCollection
-    private List<ShopDTO> favorites = new ArrayList<>();
-
-
-    @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)//cascade used for removal of all listings if removed (vendor)
-    private List<Listing> Listings=new ArrayList<>();
-
-    public USER_ROLE getRole() {
-        return role;
+    public String getName() {
+        return name;
     }
 
-    public void setRole(USER_ROLE role) {
-        this.role = role;
-    }
-
-//    @JsonIgnore
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-//    @JsonIgnore
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -123,12 +81,20 @@ public class User {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setName( String name) {
-        this.name = name;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public USER_ROLE getUserType() {
@@ -139,21 +105,32 @@ public class User {
         this.userType = userType;
     }
 
-    public @NotBlank(message = "Phone number required") String getPhoneNumber() {
-        return phoneNumber;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPhoneNumber(@NotBlank(message = "Phone number required") String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
-    public @NotBlank(message = "Address required") String getAddress() {
-        return address;
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
-    public void setAddress(@NotBlank(message = "Address required") String address) {
-        this.address = address;
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Listing> listings = new ArrayList<>();
+
+    // Custom methods for password matching
+    public boolean isPasswordConfirmed() {
+        return password != null && password.equals(confirmPassword);
     }
+
+    // Override Lombok's generated setPassword to encode the password
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 
 
 }
