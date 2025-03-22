@@ -2,8 +2,6 @@ package com.Odyssey.Odyssey.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
-
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 
