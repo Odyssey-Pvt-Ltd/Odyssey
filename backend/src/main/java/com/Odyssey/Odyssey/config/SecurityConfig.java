@@ -27,7 +27,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/signup", "/api/auth/SignIn").permitAll() // Public endpoints
                         .requestMatchers("/api/user/profile").permitAll() // Public profile access
-                        .requestMatchers("/api/admin/**").hasAnyRole("SHOP_OWNER", "ADMIN") // Restricted admin access
+                        .requestMatchers("/api/admin/**").hasAnyRole("VENDOR", "ADMIN") // Restricted admin access
                         .requestMatchers("/api/**").authenticated() // Require authentication for API endpoints
                         .anyRequest().permitAll() // Allow all other requests
                 )
