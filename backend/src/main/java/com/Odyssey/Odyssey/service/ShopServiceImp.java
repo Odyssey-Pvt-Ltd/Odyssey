@@ -78,7 +78,7 @@ public class ShopServiceImp implements ShopService {
         Optional<Shop> opt = shopRepository.findById(ID);
 
         if(opt.isEmpty()){
-            throw new Exception("Email already exists");
+            throw new Exception("Shop not found");
         }
         return opt.get();
     }
