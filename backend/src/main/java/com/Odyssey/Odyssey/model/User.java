@@ -63,7 +63,7 @@ public class User {
     private String confirmPassword;
 
     @Enumerated(EnumType.STRING)
-    private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
+    private USER_ROLE userType = USER_ROLE.ROLE_CUSTOMER; // Default role
 
     public List<ShopDTO> getFavorites() {
         return favorites;
