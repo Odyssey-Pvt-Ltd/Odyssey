@@ -1,8 +1,11 @@
 package com.Odyssey.Odyssey.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name = "notes")
@@ -14,13 +17,10 @@ public class Note {
     private String title;
     private String content;
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+
 
     public String getContent() {
         return content;
@@ -45,9 +45,6 @@ public class Note {
     public void setNote_id(Long id) {
         this.note_id = id;
     }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt = new Date();
 
 }
 
