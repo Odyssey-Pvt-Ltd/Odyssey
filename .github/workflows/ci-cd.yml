@@ -11,37 +11,6 @@ on:
 
 # Jobs to run
 jobs:
-  # Frontend (Flutter) Job
-  frontend:
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout the code
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Set up Flutter
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.13.0' # Replace with your Flutter version
-
-      # Navigate to the frontend directory
-      - name: Navigate to frontend
-        run: cd frontend
-
-      # Install dependencies
-      - name: Install Flutter dependencies
-        run: flutter pub get
-
-      # Run tests
-      - name: Run Flutter tests
-        run: flutter test
-
-      # Build the app (optional, if you want to ensure the app builds successfully)
-      - name: Build Flutter app
-        run: flutter build apk --release
-
-  # Backend (Spring Boot) Job
   backend:
     runs-on: ubuntu-latest
     steps:
@@ -53,7 +22,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '21' # Replace with your Java version
+          java-version: '17' # Replace with your Java version
           distribution: 'temurin'
 
       # Navigate to the backend directory
@@ -64,6 +33,6 @@ jobs:
       - name: Build Spring Boot project
         run: ./mvnw clean package
 
-      # Run tests (optional, if you have tests)
+      # Run tests
       - name: Run Spring Boot tests
         run: ./mvnw test
