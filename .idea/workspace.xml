@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="testing pipeline 3">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/controller/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/repository/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/service/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/service/CategoryServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/model/Listing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +186,7 @@
       <workItem from="1742628552253" duration="3360000" />
       <workItem from="1742715963832" duration="494000" />
       <workItem from="1742719716054" duration="1309000" />
-      <workItem from="1742724929129" duration="876000" />
+      <workItem from="1742724929129" duration="1908000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
