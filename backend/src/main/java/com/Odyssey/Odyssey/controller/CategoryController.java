@@ -32,12 +32,12 @@ public class CategoryController {
     }
 
     @GetMapping("/category/shop")
-    public ResponseEntity<Category> getShopCategory(@RequestBody Category category,
-                                                   @RequestHeader("Authorization") String jwt) throws Exception {
+    public ResponseEntity<Category> getShopCategory(@RequestHeader("Authorization") String jwt) throws Exception {
 
         User user = userService.findUserByJwtToken(jwt);
 
-        Category createdCategory = categoryService.findCategoryById(category.getId());
+        Category createdCategory = categoryService.findCategoryById(user.getId());
+
         return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
     }
 
