@@ -4,10 +4,12 @@ import com.Odyssey.Odyssey.model.Category;
 import com.Odyssey.Odyssey.model.Shop;
 import com.Odyssey.Odyssey.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CategoryServiceImp implements CategoryService{
 
     @Autowired
@@ -24,7 +26,7 @@ public class CategoryServiceImp implements CategoryService{
         category.setShop(shop);
         category.setShop(shop);
 
-        return categoryRepository.save(category);;
+        return categoryRepository.save(category);
     }
 
     @Override
