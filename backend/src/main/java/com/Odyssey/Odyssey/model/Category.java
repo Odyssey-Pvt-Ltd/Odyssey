@@ -6,10 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Category {
 
     @Id
@@ -18,17 +18,9 @@ public class Category {
 
     private String name;
 
-    public Shop getShop() {
-        return shop;
-    }
-
-    public void setShop(Shop shop) {
-        this.shop = shop;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @ManyToOne
+    @JsonIgnore
+    private Shop shop;
 
     public Long getId() {
         return id;
@@ -38,11 +30,20 @@ public class Category {
         this.id = id;
     }
 
-    @ManyToOne
-    @JsonIgnore
-    private Shop shop;
-
     public String getName() {
         return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
 }
