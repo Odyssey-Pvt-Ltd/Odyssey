@@ -1,6 +1,5 @@
 name: CI/CD Pipeline
 
-# Trigger the workflow on push or pull request to the main branch
 on:
   push:
     branches:
@@ -9,30 +8,55 @@ on:
     branches:
       - main
 
-# Jobs to run
 jobs:
-  backend:
+  frontend:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Java
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.13.0'
+
+      - name: Navigate to frontend
+        run: cd frontend
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run Flutter tests
+        run: flutter test
+
+      - name: Build Flutter app
+        run: flutter build apk --release
+
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '17' # Replace with your Java version
+          java-version: '17'
           distribution: 'temurin'
 
-      # Navigate to the backend directory
       - name: Navigate to backend
         run: cd backend
 
-      # Build the Spring Boot project
+      - name: Verify mvnw and pom.xml exist
+        run: |
+          ls -l mvnw
+          ls -l pom.xml
+
+      - name: Set execute permissions for mvnw
+        run: chmod +x mvnw
+
       - name: Build Spring Boot project
         run: ./mvnw clean package
 
-      # Run tests
       - name: Run Spring Boot tests
         run: ./mvnw test

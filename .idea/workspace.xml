@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="new clone">
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="testing pipeline 3">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +21,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Dart File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Dart File" />
       </list>
     </option>
   </component>
@@ -42,6 +44,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Odyssey-Pvt-Ltd/Odyssey.git&quot;,
+
     &quot;accountId&quot;: &quot;594c6978-ff7d-4af3-b423-fcbae076c6a4&quot;
   }
 }</component>
@@ -63,6 +66,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.GenerateSecretKey.executor&quot;: &quot;Run&quot;,
+    &quot;Flutter.home_screen1.dart.executor&quot;: &quot;Run&quot;,
     &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
     &quot;Flutter.manual_planner_screen1.dart.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.OdysseyApplicationTests.executor&quot;: &quot;Run&quot;,
@@ -81,12 +85,15 @@
     &quot;git-widget-placeholder&quot;: &quot;Binara&quot;,
 
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Odyssey/frontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Odyssey/frontend/android&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.23908046&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -111,6 +118,10 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="home_screen1.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/frontend/lib/home_screen1.dart" />
+      <method v="2" />
     </configuration>
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/frontend/lib/main.dart" />
@@ -153,8 +164,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
       </set>
     </attachedChunks>
   </component>
@@ -184,6 +195,7 @@
       <workItem from="1742628552253" duration="3360000" />
       <workItem from="1742715963832" duration="494000" />
       <workItem from="1742719716054" duration="1309000" />
+      <workItem from="1742724929129" duration="3524000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
@@ -489,7 +501,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742719765831</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="changes">
+      <option name="closed" value="true" />
+      <created>1742722455276</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1742722455276</updated>
+    </task>
+    <task id="LOCAL-00040" summary="testing pipeline">
+      <option name="closed" value="true" />
+      <created>1742722646668</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1742722646668</updated>
+    </task>
+    <task id="LOCAL-00041" summary="testing pipeline 3">
+      <option name="closed" value="true" />
+      <created>1742722819448</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1742722819448</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,6 +565,9 @@
     <MESSAGE value="ci-cd pipeline file added" />
     <MESSAGE value="main merged" />
     <MESSAGE value="new clone" />
-    <option name="LAST_COMMIT_MESSAGE" value="new clone" />
+    <MESSAGE value="changes" />
+    <MESSAGE value="testing pipeline" />
+    <MESSAGE value="testing pipeline 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing pipeline 3" />
   </component>
 </project>
