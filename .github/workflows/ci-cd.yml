@@ -47,8 +47,10 @@ jobs:
       - name: Navigate to backend
         run: cd backend
 
-      - name: Verify mvnw exists
-        run: ls -l mvnw
+      - name: Verify mvnw and pom.xml exist
+        run: |
+          ls -l mvnw
+          ls -l pom.xml
 
       - name: Set execute permissions for mvnw
         run: chmod +x mvnw
