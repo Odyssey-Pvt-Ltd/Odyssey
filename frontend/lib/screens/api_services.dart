@@ -1,11 +1,10 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as http;
+import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String baseUrl = "http://localhost:8081"; // Replace with your backend URL
+  static const String baseUrl = "http://localhost:8081";
 
-  // Example: User Login
+
   Future<Map<String, dynamic>> login(String email, String password) async {
     final response = await http.post(
       Uri.parse('$baseUrl/api/auth/SignIn'),
@@ -14,13 +13,13 @@ class ApiService {
     );
 
     if (response.statusCode == 200) {
-      return jsonDecode(response.body);
+      return jsonDecode(response.body); // Parse the response JSON
     } else {
       throw Exception('Failed to login');
     }
   }
 
-  // Example: Fetch User Profile
+
   Future<Map<String, dynamic>> getUserProfile(String jwt) async {
     final response = await http.get(
       Uri.parse('$baseUrl/api/user/profile'),
@@ -34,5 +33,5 @@ class ApiService {
     }
   }
 
-// Add more methods for other endpoints (e.g., signup, fetch listings, etc.)
+
 }
