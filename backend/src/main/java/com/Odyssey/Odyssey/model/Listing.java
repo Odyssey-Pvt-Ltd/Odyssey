@@ -2,6 +2,7 @@ package com.Odyssey.Odyssey.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,8 @@ public class Listing {
 
     private Long price;
 
-    @NotBlank(message = "Required listing type")
+//    @NotNull(message = "Required listing type")
+    @Enumerated(EnumType.STRING)
     private listing_type listing_type;
 
     @ManyToOne
