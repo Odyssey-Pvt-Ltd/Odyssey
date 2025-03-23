@@ -28,7 +28,7 @@ public class CategoryController {
         User user = userService.findUserByJwtToken(jwt);
 
         Category createdCategory = categoryService.createCategory(category.getName(), user.getId());
-        return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
+        return new ResponseEntity<>(createdCategory, HttpStatus.OK);
     }
 
     @GetMapping("/category/shop")

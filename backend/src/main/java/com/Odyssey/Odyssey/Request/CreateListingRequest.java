@@ -19,7 +19,15 @@ public class CreateListingRequest {
     @NotNull(message = "Price is required")
     private Long price;
 
-    private Category category;
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    private Long categoryId;
     private List<String> images;
 
     private long shopID;
@@ -45,9 +53,7 @@ public class CreateListingRequest {
         this.price = price;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+
 
     public void setShopID(long shopID) {
         this.shopID = shopID;
@@ -75,9 +81,7 @@ public class CreateListingRequest {
         return shopID;
     }
 
-    public Category getCategory() {
-        return category;
-    }
+
 
     public String getDescription() {
         return description;

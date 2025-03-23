@@ -2,6 +2,7 @@ package com.Odyssey.Odyssey.service;
 
 import com.Odyssey.Odyssey.model.Category;
 import com.Odyssey.Odyssey.model.Shop;
+import com.Odyssey.Odyssey.model.User;
 import com.Odyssey.Odyssey.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,13 +19,24 @@ public class CategoryServiceImp implements CategoryService{
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private UserService userService;
+
     @Override
     public Category createCategory(String name, Long user_id) throws Exception {
-        Shop shop = shopService.findShopById(user_id);
+
+        User user = userService.findUserById(user_id);
+        Shop shop = shopService.findShopById(user.getShop().getId());
+
+        if (shop == null) {
+            throw new Exception("No shop found for User ID: " + user_id);
+        }
+
+
         Category category = new Category();
         category.setName(name);
         category.setShop(shop);
-        category.setShop(shop);
+
 
         return categoryRepository.save(category);
     }

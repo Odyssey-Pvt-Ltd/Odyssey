@@ -16,7 +16,7 @@ import java.util.Optional;
 
 
 @Service
-public class ShopServiceImp implements ShopService {
+public class ShopServiceImp implements ShopService, UserService {
 
     @Autowired
     private ShopRepository shopRepository;
@@ -26,6 +26,23 @@ public class ShopServiceImp implements ShopService {
 
     @Autowired
     private UserRepository userRepository;
+
+
+    @Override
+    public User findUserByJwtToken(String jwt) throws Exception {
+        return null;
+    }
+
+    @Override
+    public User findUserByEmail(String email) throws Exception {
+        return null;
+    }
+
+    @Override
+    public User findUserById(Long id) throws Exception {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new Exception("User not found for ID: " + id));
+    }
 
     @Override
     public Shop createShop(CreateShopRequest req, User user) {

@@ -28,5 +28,7 @@ public interface ShopService {
     public Shop updateShopStatus(Long ID) throws Exception;
 
 
+
+
     //Shop getShopByUserID(Long userId) throws Exception;
 }
