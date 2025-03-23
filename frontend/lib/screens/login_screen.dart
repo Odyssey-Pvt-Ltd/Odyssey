@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../SignUpScreen.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -45,7 +47,12 @@ class LoginScreen extends StatelessWidget {
                   Expanded(
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/signup');
+                        // Navigate to SignUpScreen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpScreen()),
+                        );
                       },
                       child: Text(
                         'Signup',
@@ -115,7 +122,7 @@ class LoginScreen extends StatelessWidget {
                     border: Border.all(color: Colors.grey[300]!),
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.g_translate, size: 24),
+                    icon: Icon(Icons.g_mobiledata, size: 24),
                     onPressed: () {},
                   ),
                 ),
