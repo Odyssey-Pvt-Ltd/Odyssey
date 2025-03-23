@@ -11,14 +11,14 @@ class AuthProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('jwt', jwt);
     _jwt = jwt;
-    notifyListeners(); // Notify listeners to rebuild UI
+    notifyListeners();
   }
 
   // Load JWT token from SharedPreferences
   Future<void> loadJwt() async {
     final prefs = await SharedPreferences.getInstance();
     _jwt = prefs.getString('jwt');
-    notifyListeners(); // Notify listeners to rebuild UI
+    notifyListeners();
   }
 
   // Clear JWT token (for logout)
@@ -26,6 +26,6 @@ class AuthProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('jwt');
     _jwt = null;
-    notifyListeners(); // Notify listeners to rebuild UI
+    notifyListeners();
   }
 }

@@ -7,7 +7,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200], // Background color similar to your design
+      backgroundColor: Colors.grey[200],
       body: Column(
         children: [
           // Top Map Image with Rounded Corners
@@ -17,7 +17,7 @@ class OnboardingScreen extends StatelessWidget {
               bottomRight: Radius.circular(30),
             ),
             child: Image.asset(
-              'assets/onboardingpage.jpg', // Path to the map image
+              'assets/onboardingpage.jpg',
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.7,
               fit: BoxFit.cover,
@@ -80,7 +80,7 @@ class OnboardingScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Get Started Button
+
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
