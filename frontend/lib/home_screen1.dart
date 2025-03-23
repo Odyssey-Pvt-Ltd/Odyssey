@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:odyssey_app/screens/auth_provider.dart';
 import 'package:provider/provider.dart';
-import '../services/api_service.dart'; // Import the ApiService
+import 'screens/api_services.dart'; // Import the ApiService
 
 class HomeScreen extends StatelessWidget {
   final ApiService _apiService = ApiService(); // Create an instance of ApiService

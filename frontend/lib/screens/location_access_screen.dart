@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../home_screen1.dart';
+
 
 class LocationAccessScreen extends StatelessWidget {
   const LocationAccessScreen({super.key});
@@ -36,14 +38,14 @@ class LocationAccessScreen extends StatelessWidget {
               SizedBox(height: 20),
               // Location Image
               Image.asset(
-                'assets/location.jpg', // Ensure the image is in assets and added in pubspec.yaml
+                'assets/location.jpg',
                 height: 300,
                 width: 300,
               ),
               SizedBox(height: 20),
               // Description
               Text(
-                'To provide you with accurate trip recommendations, and nearby attractions, we need access to your location.',
+                'To provide you with accurate trip recommendations and nearby attractions, we need access to your location.',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
@@ -61,7 +63,12 @@ class LocationAccessScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/map_screen');
+                  // Navigate to HomeScreen1 on Allow Location Data
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomeScreen()),
+                  );
                 },
                 child: Text(
                   'Allow location data',
@@ -75,7 +82,12 @@ class LocationAccessScreen extends StatelessWidget {
               // Skip Button
               TextButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/location');
+                  // Navigate to HomeScreen1 on Skip
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomeScreen()),
+                  );
                 },
                 child: Text(
                   'Skip',

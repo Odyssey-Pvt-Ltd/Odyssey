@@ -38,4 +38,6 @@ class ApiService {
       throw Exception('Failed to fetch user profile');
     }
   }
+
+  getUserProfile(String jwt) {}
 }
