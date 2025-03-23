@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:odyssey_app/screens/explore_screen.dart'; // Update the correct path
+import 'package:odyssey_app/screens/explore_screen.dart';
 
 
 class OnboardingScreen2 extends StatelessWidget {
@@ -28,7 +28,7 @@ class OnboardingScreen2 extends StatelessWidget {
               SizedBox(height: 20),
               // Onboarding Image
               Image.asset(
-                'assets/sl.jpg', // Ensure this image is added in pubspec.yaml
+                'assets/sl.jpg',
                 height: 500,
                 width: 400,
               ),
