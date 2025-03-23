@@ -28,7 +28,8 @@ public class Listing {
 
     private Long price;
 
-    @NotNull(message = "Required listing type")
+//    @NotNull(message = "Required listing type")
+    @Enumerated(EnumType.STRING)
     private listing_type listing_type;
 
     @ManyToOne

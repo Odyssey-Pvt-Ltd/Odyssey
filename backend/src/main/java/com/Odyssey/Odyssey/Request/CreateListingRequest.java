@@ -104,6 +104,6 @@ public class CreateListingRequest {
         this.listing_type = listing_type;
     }
 
-    @NotNull(message = "Listing type is required")
-    private listing_type listing_type; // Add this field and validate it with @NotNull
+//    @NotNull(message = "Listing type is required")
+    private listing_type listing_type;
 }
