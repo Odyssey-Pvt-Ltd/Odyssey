@@ -18,7 +18,31 @@ public class Category {
 
     private String name;
 
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @ManyToOne
     @JsonIgnore
     private Shop shop;
+
+    public String getName() {
+        return name;
+    }
 }

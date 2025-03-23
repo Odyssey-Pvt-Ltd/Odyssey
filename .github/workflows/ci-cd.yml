@@ -1,0 +1,38 @@
+name: CI/CD Pipeline
+
+# Trigger the workflow on push or pull request to the main branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Jobs to run
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Java
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17' # Replace with your Java version
+          distribution: 'temurin'
+
+      # Navigate to the backend directory
+      - name: Navigate to backend
+        run: cd backend
+
+      # Build the Spring Boot project
+      - name: Build Spring Boot project
+        run: ./mvnw clean package
+
+      # Run tests
+      - name: Run Spring Boot tests
+        run: ./mvnw test

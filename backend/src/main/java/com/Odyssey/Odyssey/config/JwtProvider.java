@@ -18,9 +18,10 @@ public class JwtProvider {
 
     private SecretKey key = Keys.hmacShaKeyFor(Base64.getDecoder().decode(SECRET_KEY));
 
+
     public String generateToken(Authentication auth) {
         Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
-        String roles = populateAthoraities(authorities);
+        String roles = populateAuthorities(authorities);
 
         String jwt = Jwts.builder().setIssuedAt(new Date())
                 .setExpiration((new Date(new Date().getTime() + 86400000)))
@@ -33,16 +34,15 @@ public class JwtProvider {
     }
 
     public String getEmailFromJwt(String jwt) {
-
-        jwt = jwt.substring(7);
-
+        if (jwt.startsWith("Bearer ")) {
+            jwt = jwt.substring(7);
+        }
         Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
-
-        String email = String.valueOf(claims.get("email"));
-        return email;
+        return String.valueOf(claims.get("email"));
     }
 
-    private String populateAthoraities(Collection<? extends GrantedAuthority> authorities) {
+
+    private String populateAuthorities(Collection<? extends GrantedAuthority> authorities) {
         Set<String> auths = new HashSet<>();
 
         for (GrantedAuthority authority : authorities) {

@@ -18,43 +18,32 @@ import java.util.Optional;
 @Service
 public class CustomerUserDetailsService implements UserDetailsService {
 
-
     @Autowired
     private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("Searching for user with email: " + username); // Log the email being searched
-        Optional<User> userOptional = userRepository.findByEmail(username);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        System.out.println("Searching for user with email: " + email);
+        Optional<User> userOptional = userRepository.findByEmail(email);
 
         if (userOptional.isEmpty()) {
-            System.out.println("User not found: " + username); // Log if user is not found
-            throw new UsernameNotFoundException("User not found: " + username);
+            System.out.println("User not found: " + email);
+            throw new UsernameNotFoundException("User not found: " + email);
         }
 
         User user = userOptional.get();
-        System.out.println("User found: " + user.getEmail()); // Log the found user
-        USER_ROLE role = user.getRole();
+        System.out.println("User found: " + user.getName());
+
+        // Use getUserType() instead of getRole()
+        USER_ROLE role = user.getUserType();
 
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority(role.toString()));
 
-        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
+        return new org.springframework.security.core.userdetails.User(
+                user.getEmail(), // Use email as the username
+                user.getPassword(),
+                authorities
+        );
     }
 }
-/*
-        if (user.isPresent()) {
-            throw new UsernameNotFoundException("User not found" + username);
-        }
-
-        USER_ROLE role = user.get().getRole();
-
-        List<GrantedAuthority> authorities = new ArrayList<>();
-
-        authorities.add(new SimpleGrantedAuthority(role.toString()));
-
-        return new org.springframework.security.core.userdetails.User(user.get().getEmail(), user.get().getPassword(), authorities);
-    }
-}
-
- */

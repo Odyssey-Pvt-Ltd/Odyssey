@@ -13,21 +13,22 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 
-import java.util.Collections;
 import java.util.Arrays;
-
+import java.util.Collections;
+//pipeline test 3
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http, CorsConfigurationSource corsConfigurationSource) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, CorsConfigurationSource corsConfigurationSource) throws Exception {
         http
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/auth/signup", "/api/auth/SignIn").permitAll() // ✅ Allow public access to signup & sign-in
-                        .requestMatchers("/api/admin/**").hasAnyRole("SHOP_OWNER", "ADMIN") // Admin endpoints
-                        .requestMatchers("/api/**").authenticated() // Require authentication for all other API endpoints
+                        .requestMatchers("/api/auth/signup", "/api/auth/SignIn").permitAll() // Public endpoints
+                        .requestMatchers("/api/user/profile").permitAll() // Public profile access
+                        .requestMatchers("/api/admin/**").hasAnyRole("VENDOR", "ADMIN") // Restricted admin access
+                        .requestMatchers("/api/**").authenticated() // Require authentication for API endpoints
                         .anyRequest().permitAll() // Allow all other requests
                 )
                 .csrf(csrf -> csrf.disable())
@@ -37,26 +38,22 @@ public class SecurityConfig {
         return http.build();
     }
 
-
     @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        return new CorsConfigurationSource() {
-            @Override
-            public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
-                CorsConfiguration cfg = new CorsConfiguration();
-                cfg.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Allow requests from this origin
-                cfg.setAllowedMethods(Collections.singletonList("*")); // Allow all HTTP methods
-                cfg.setAllowedHeaders(Collections.singletonList("*")); // Allow all headers
-                cfg.setAllowCredentials(true); // Allow credentials
-                cfg.setExposedHeaders(Collections.singletonList("Authorization")); // Expose Authorization header
-                cfg.setMaxAge(3600L); // Cache preflight response for 1 hour
-                return cfg;
-            }
+    public CorsConfigurationSource corsConfigurationSource() {
+        return request -> {
+            CorsConfiguration cfg = new CorsConfiguration();
+            cfg.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Allow requests from this origin
+            cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+            cfg.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
+            cfg.setAllowCredentials(true); // Allow credentials
+            cfg.setExposedHeaders(Collections.singletonList("Authorization")); // Expose Authorization header
+            cfg.setMaxAge(3600L); // Cache preflight response for 1 hour
+            return cfg;
         };
     }
 
     @Bean
-    PasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }

@@ -25,7 +25,7 @@ public interface ShopService {
 
     public ShopDTO addToFavorites(Long shopId, User user) throws Exception;
 
-    public Shop UpdateShopStatus(Long ID) throws Exception;
+    public Shop updateShopStatus(Long ID) throws Exception;
 
 
 }

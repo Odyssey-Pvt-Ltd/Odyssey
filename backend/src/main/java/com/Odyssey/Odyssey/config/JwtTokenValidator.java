@@ -17,6 +17,7 @@ import io.jsonwebtoken.security.Keys;
 
 import javax.crypto.SecretKey;
 import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 import static com.Odyssey.Odyssey.config.JwtConstant.SECRET_KEY;
@@ -34,7 +35,7 @@ public class JwtTokenValidator extends OncePerRequestFilter {
 
             try{
 
-                SecretKey key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+                SecretKey key = Keys.hmacShaKeyFor(Base64.getDecoder().decode(SECRET_KEY));
 
                 Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
 
@@ -48,8 +49,11 @@ public class JwtTokenValidator extends OncePerRequestFilter {
 
                 SecurityContextHolder.getContext().setAuthentication(authentication);
 
-            } catch(Exception e){
-                throw new BadCredentialsException("Invalid Token");
+            } catch (Exception e) {
+                logger.error("Invalid JWT token: " + e.getMessage(), e);
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("Invalid Token: " + e.getMessage());
+                return;
             }
         }
         filterChain.doFilter(request, response);
