@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="main merged" />
+    <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="new clone">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,12 +39,12 @@
     &quot;assignee&quot;: &quot;binnyboi45&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Odyssey-Pvt-Ltd/Odyssey.git&quot;,
-    &quot;accountId&quot;: &quot;6cfd9a76-c4cc-41b7-ae1e-2151dbc016d9&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Odyssey-Pvt-Ltd/Odyssey.git",
+    "accountId": "594c6978-ff7d-4af3-b423-fcbae076c6a4"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="autoscrollToSource" value="true" />
   </component>
@@ -182,6 +184,7 @@
       <workItem from="1742578639388" duration="753000" />
       <workItem from="1742628552253" duration="3360000" />
       <workItem from="1742715963832" duration="494000" />
+      <workItem from="1742719716054" duration="1309000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
@@ -479,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742717141904</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="new clone">
+      <option name="closed" value="true" />
+      <created>1742719765831</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1742719765831</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,6 +529,7 @@
     <MESSAGE value="other files" />
     <MESSAGE value="ci-cd pipeline file added" />
     <MESSAGE value="main merged" />
-    <option name="LAST_COMMIT_MESSAGE" value="main merged" />
+    <MESSAGE value="new clone" />
+    <option name="LAST_COMMIT_MESSAGE" value="new clone" />
   </component>
 </project>
