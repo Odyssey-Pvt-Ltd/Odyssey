@@ -37,12 +37,12 @@
     &quot;assignee&quot;: &quot;binnyboi45&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Odyssey-Pvt-Ltd/Odyssey.git",
-    "accountId": "6cfd9a76-c4cc-41b7-ae1e-2151dbc016d9"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Odyssey-Pvt-Ltd/Odyssey.git&quot;,
+    &quot;accountId&quot;: &quot;6cfd9a76-c4cc-41b7-ae1e-2151dbc016d9&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="autoscrollToSource" value="true" />
   </component>
@@ -145,7 +145,7 @@
       <list>
         <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="Application.GenerateSecretKey" />
-        <item itemvalue="Application.GenerateSecretKey" />
+        <item itemvalue="JUnit.OdysseyApplicationTests" />
       </list>
     </recent_temporary>
   </component>
