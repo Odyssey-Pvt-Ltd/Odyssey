@@ -15,7 +15,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 
 import java.util.Arrays;
 import java.util.Collections;
-//hyuio 234
+//pipeline test 3
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
