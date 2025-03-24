@@ -30,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Binara" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +44,8 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Odyssey-Pvt-Ltd/Odyssey.git&quot;,
-    &quot;accountId&quot;: &quot;4434008d-33ea-4d1f-99d3-7a4bb8c7bb39&quot;
+
+    &quot;accountId&quot;: &quot;594c6978-ff7d-4af3-b423-fcbae076c6a4&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -157,7 +158,6 @@
       <list>
         <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="Application.GenerateSecretKey" />
-        <item itemvalue="JUnit.OdysseyApplicationTests" />
       </list>
     </recent_temporary>
   </component>
