@@ -1,6 +1,5 @@
 name: CI/CD Pipeline
 
-# Trigger the workflow on push or pull request to the main branch
 on:
   push:
     branches:
@@ -9,30 +8,27 @@ on:
     branches:
       - main
 
-# Jobs to run
 jobs:
-  backend:
+  frontend:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Java
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17' # Replace with your Java version
-          distribution: 'temurin'
+      - name: Build and test Flutter app using Docker
+        run: |
+          cd frontend
+          docker build -t odyssey-frontend .
+          docker run odyssey-frontend
 
-      # Navigate to the backend directory
-      - name: Navigate to backend
-        run: cd backend
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      # Build the Spring Boot project
-      - name: Build Spring Boot project
-        run: ./mvnw clean package
-
-      # Run tests
-      - name: Run Spring Boot tests
-        run: ./mvnw test
+      - name: Build and test Spring Boot app using Docker
+        run: |
+          cd backend
+          docker build -t odyssey-backend .
+          docker run odyssey-backend ./mvnw test
