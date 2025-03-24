@@ -110,7 +110,7 @@
       <recent name="E:\Odyssey\frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.OdysseyApplication">
+  <component name="RunManager" selected="Application.GenerateSecretKey">
     <configuration name="GenerateSecretKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GenerateSecretKey" />
       <module name="Odyssey" />
@@ -164,8 +164,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -193,9 +193,9 @@
       <workItem from="1742467158495" duration="307000" />
       <workItem from="1742578639388" duration="753000" />
       <workItem from="1742628552253" duration="3360000" />
-      <workItem from="1742715963832" duration="494000" />
-      <workItem from="1742719716054" duration="1309000" />
-      <workItem from="1742724929129" duration="3524000" />
+
+      <workItem from="1742759500075" duration="594000" />
+
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />

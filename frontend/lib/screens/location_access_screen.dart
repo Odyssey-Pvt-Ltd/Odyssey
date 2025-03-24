@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../home_screen1.dart';
+
 
 class LocationAccessScreen extends StatelessWidget {
   const LocationAccessScreen({super.key});
@@ -37,12 +39,15 @@ class LocationAccessScreen extends StatelessWidget {
               // Location Image
               Image.asset(
                 'assets/location.jpg', // Ensure this image is added in pubspec.yaml
+
                 height: 300,
                 width: 300,
               ),
               const SizedBox(height: 20),
               // Description
+
               const Text(
+
                 'To provide you with accurate trip recommendations and nearby attractions, we need access to your location.',
                 style: TextStyle(
                   fontSize: 16,
@@ -61,8 +66,10 @@ class LocationAccessScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
+
                   // Navigate to HomeScreen after allowing location access
                   Navigator.pushReplacementNamed(context, '/home');
+
                 },
                 child: const Text(
                   'Allow location data',
@@ -76,8 +83,10 @@ class LocationAccessScreen extends StatelessWidget {
               // Skip Button
               TextButton(
                 onPressed: () {
+
                   // Navigate to HomeScreen on Skip
                   Navigator.pushReplacementNamed(context, '/home');
+
                 },
                 child: const Text(
                   'Skip',

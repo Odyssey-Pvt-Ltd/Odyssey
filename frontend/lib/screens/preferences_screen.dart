@@ -84,8 +84,10 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                   // Skip Button
                   TextButton(
                     onPressed: () {
+
                       // Navigate to HomeScreen
                       Navigator.pushReplacementNamed(context, '/home');
+
                     },
                     child: const Text(
                       'Skip',
@@ -99,15 +101,19 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
+
                       padding: const EdgeInsets.symmetric(
                           horizontal: 32, vertical: 16),
+
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     onPressed: () {
+
                       // Navigate to HomeScreen
                       Navigator.pushReplacementNamed(context, '/home');
+
                     },
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,
