@@ -1,9 +1,10 @@
 package com.Odyssey.Odyssey.Request;
 
 import com.Odyssey.Odyssey.model.Category;
+import com.Odyssey.Odyssey.model.listing_type; // Ensure this import is correct
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import  lombok.Data;
+import lombok.Data;
 
 import java.util.List;
 
@@ -19,11 +20,17 @@ public class CreateListingRequest {
     @NotNull(message = "Price is required")
     private Long price;
 
+    @NotNull(message = "Category is required")
     private Category category;
+
     private List<String> images;
 
-    private long shopID;
+    @NotNull(message = "Shop ID is required")
+    private Long shopID;
+
     private boolean active;
+
+    private boolean inactive;
 
     public String getTitle() {
         return title;
@@ -31,6 +38,10 @@ public class CreateListingRequest {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
@@ -45,11 +56,27 @@ public class CreateListingRequest {
         this.price = price;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
     public void setCategory(Category category) {
         this.category = category;
     }
 
-    public void setShopID(long shopID) {
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+    public Long getShopID() {
+        return shopID;
+    }
+
+    public void setShopID(Long shopID) {
         this.shopID = shopID;
     }
 
@@ -62,30 +89,21 @@ public class CreateListingRequest {
     }
 
     public boolean isInactive() {
-        return Inactive;
+        return inactive;
     }
 
     public void setInactive(boolean inactive) {
-        Inactive = inactive;
+        this.inactive = inactive;
     }
 
-    private boolean Inactive;
-
-    public Long getShopID() {
-        return shopID;
+    public listing_type getListing_type() {
+        return listing_type;
     }
 
-    public Category getCategory() {
-        return category;
+    public void setListing_type(listing_type listing_type) {
+        this.listing_type = listing_type;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public List<String> getImages() {
-        return images;
-    }
-
-
+//    @NotNull(message = "Listing type is required")
+    private listing_type listing_type;
 }
