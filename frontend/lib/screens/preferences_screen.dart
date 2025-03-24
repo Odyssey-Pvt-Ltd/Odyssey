@@ -48,15 +48,15 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: IconButton(
-                icon: Icon(Icons.arrow_back, color: Colors.black),
+                icon: const Icon(Icons.arrow_back, color: Colors.black),
                 onPressed: () {
                   Navigator.pop(context);
                 },
               ),
             ),
             // Title
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
               child: Text(
                 'Add your preferences',
                 style: TextStyle(
@@ -65,11 +65,11 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             // Preferences Grid
             Expanded(
               child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Wrap(
                   spacing: 12,
                   runSpacing: 12,
@@ -87,9 +87,9 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/home');
+                      Navigator.pushReplacementNamed(context, '/location_access');
                     },
-                    child: Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         color: Colors.black,
@@ -100,16 +100,15 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
-                      padding:
-                      EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/location');
+                      Navigator.pushReplacementNamed(context, '/location_access');
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
@@ -146,7 +145,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           color: isSelected ? Colors.black : Colors.grey[200],
           borderRadius: BorderRadius.circular(20),
         ),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Text(
           label,
           style: TextStyle(
