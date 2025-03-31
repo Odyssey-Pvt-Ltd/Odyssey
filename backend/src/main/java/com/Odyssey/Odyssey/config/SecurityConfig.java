@@ -25,6 +25,7 @@ public class SecurityConfig {
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/chat").authenticated()
                         .requestMatchers("/api/category/**").authenticated()
                         .requestMatchers("/api/admin/**").hasAnyRole("VENDOR", "ADMIN")
                         .requestMatchers("/api/**").authenticated()
