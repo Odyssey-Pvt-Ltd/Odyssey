@@ -1,2 +1,0 @@
-E:/Odyssey/frontend/android/app/.cxx/Debug/5l306z83/armeabi-v7a/CMakeFiles/edit_cache.dir
-E:/Odyssey/frontend/android/app/.cxx/Debug/5l306z83/armeabi-v7a/CMakeFiles/rebuild_cache.dir
