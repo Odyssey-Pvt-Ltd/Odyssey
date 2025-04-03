@@ -116,7 +116,7 @@
       <recent name="E:\Odyssey\frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.OdysseyApplication">
+  <component name="RunManager" selected="Application.GenerateSecretKey">
     <configuration name="GenerateSecretKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GenerateSecretKey" />
       <module name="Odyssey" />
@@ -199,12 +199,14 @@
       <workItem from="1742467158495" duration="307000" />
       <workItem from="1742578639388" duration="753000" />
       <workItem from="1742628552253" duration="3360000" />
+
       <workItem from="1742715963832" duration="494000" />
       <workItem from="1742719716054" duration="1309000" />
       <workItem from="1742724929129" duration="3524000" />
       <workItem from="1742787777279" duration="1221000" />
       <workItem from="1742882707977" duration="125000" />
       <workItem from="1743439063705" duration="3831000" />
+
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PasswordSetupScreen extends StatelessWidget {
-  const PasswordSetupScreen({super.key});
+  const PasswordSetupScreen({super.key, required String name, required String email, required String phone});
 
   @override
   Widget build(BuildContext context) {

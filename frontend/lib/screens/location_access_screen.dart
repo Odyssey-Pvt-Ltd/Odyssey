@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../home_screen1.dart';
+
 
 class LocationAccessScreen extends StatelessWidget {
   const LocationAccessScreen({super.key});
@@ -17,15 +19,15 @@ class LocationAccessScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.black),
+                  icon: const Icon(Icons.arrow_back, color: Colors.black),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Title
-              Text(
+              const Text(
                 'Allow Location Access',
                 style: TextStyle(
                   fontSize: 24,
@@ -33,37 +35,43 @@ class LocationAccessScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Location Image
               Image.asset(
-                'assets/location.jpg', // Ensure the image is in assets and added in pubspec.yaml
+                'assets/location.jpg', // Ensure this image is added in pubspec.yaml
+
                 height: 300,
                 width: 300,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Description
-              Text(
-                'To provide you with accurate trip recommendations, and nearby attractions, we need access to your location.',
+
+              const Text(
+
+                'To provide you with accurate trip recommendations and nearby attractions, we need access to your location.',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               // Allow Location Button
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
-                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/map_screen');
+
+                  // Navigate to HomeScreen after allowing location access
+                  Navigator.pushReplacementNamed(context, '/home');
+
                 },
-                child: Text(
+                child: const Text(
                   'Allow location data',
                   style: TextStyle(
                     color: Colors.white,
@@ -71,13 +79,16 @@ class LocationAccessScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               // Skip Button
               TextButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/location');
+
+                  // Navigate to HomeScreen on Skip
+                  Navigator.pushReplacementNamed(context, '/home');
+
                 },
-                child: Text(
+                child: const Text(
                   'Skip',
                   style: TextStyle(
                     color: Colors.black,
