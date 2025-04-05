@@ -33,6 +33,9 @@ dependencies:
   provider: ^6.0.0
   shared_preferences: ^2.2.2
   http: ^1.3.0
+  dio: ^5.8.0+1
+  flutter_secure_storage: ^8.1.0
+  get: ^4.6.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -92,7 +95,4 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
   assets:
-    - assets/logo.jpeg
-    - assets/onboardingpage.jpg
-    - assets/location.jpg
-    - assets/sl.jpg
+    - assets/
