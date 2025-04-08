@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="testing pipeline 3">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Odyssey.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Odyssey.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/android/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/Odyssey/Odyssey/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/api_services.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/api_services.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/config/SecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +204,7 @@
       <workItem from="1742882707977" duration="125000" />
       <workItem from="1743439063705" duration="3831000" />
       <workItem from="1744112521985" duration="728000" />
-      <workItem from="1744115763178" duration="954000" />
+      <workItem from="1744115763178" duration="3645000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />

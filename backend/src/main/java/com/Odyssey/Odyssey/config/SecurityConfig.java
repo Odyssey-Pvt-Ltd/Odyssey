@@ -38,19 +38,38 @@ public class SecurityConfig {
         return http.build();
     }
 
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         return request -> {
             CorsConfiguration cfg = new CorsConfiguration();
-            cfg.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Allow requests from this origin
-            cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Allow specific HTTP methods
-            cfg.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type")); // Allow specific headers
-            cfg.setAllowCredentials(true); // Allow credentials
-            cfg.setExposedHeaders(Collections.singletonList("Authorization")); // Expose Authorization header
-            cfg.setMaxAge(3600L); // Cache preflight response for 1 hour
+            cfg.setAllowedOrigins(Arrays.asList(
+                    "http://localhost:3000",
+                    "http://10.0.2.2", // For Android emulator
+                    "http://localhost" // For iOS simulator
+            ));
+            cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+            cfg.setAllowedHeaders(Arrays.asList("*")); // Allow all headers
+            cfg.setAllowCredentials(true);
+            cfg.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
+            cfg.setMaxAge(3600L);
             return cfg;
         };
     }
+
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        return request -> {
+//            CorsConfiguration cfg = new CorsConfiguration();
+//            cfg.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Allow requests from this origin
+//            cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Allow specific HTTP methods
+//            cfg.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type")); // Allow specific headers
+//            cfg.setAllowCredentials(true); // Allow credentials
+//            cfg.setExposedHeaders(Collections.singletonList("Authorization")); // Expose Authorization header
+//            cfg.setMaxAge(3600L); // Cache preflight response for 1 hour
+//            return cfg;
+//        };
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
