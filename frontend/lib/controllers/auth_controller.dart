@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:odyssey_app/screens/LoginScreen.dart';
 import 'package:odyssey_app/screens/home_screen1.dart';
@@ -13,8 +14,8 @@ class AuthController extends GetxController {
     try {
       isLoading.value = true;
       final response = await _api.login(email, password);
-      await _auth.saveToken(response.data['jwt'],response.data['role']);
-      Get.to(()=>HomeScreen());
+      await _auth.saveToken(response.data['jwt'], response.data['role']);
+      Get.to(() => HomeScreen());
     } catch (e) {
       Get.snackbar('Error', e.toString());
     } finally {
@@ -32,7 +33,6 @@ class AuthController extends GetxController {
   }) async {
     try {
       isLoading.value = true;
-
       final response = await _api.signUp(
         name: name,
         email: email,
@@ -41,15 +41,20 @@ class AuthController extends GetxController {
         password: password,
         userType: userType,
       );
-      if(response.statusCode==200){
-        Get.to(()=>LoginScreen());
-        Get.snackbar('Success', 'Account created successfully!');
-      }else{
-        response.data['message'];
-      }
 
+      if (response.statusCode == 200) {
+        final data = response.data;
+        await _auth.saveToken(data['jwt'], data['role']);
+        Get.offAll(() => HomeScreen());
+        Get.snackbar('Success', 'Account created successfully!');
+      } else {
+        throw Exception(response.data['message'] ?? 'Signup failed');
+      }
+    } on DioException catch (e) {
+      final errorMessage = e.response?.data['message'] ?? e.message;
+      Get.snackbar('Error', errorMessage.toString());
     } catch (e) {
-      Get.snackbar('Error', e.  toString());
+      Get.snackbar('Error', e.toString());
     } finally {
       isLoading.value = false;
     }

@@ -46,7 +46,7 @@ public class SecurityConfig {
             cfg.setAllowedOrigins(Arrays.asList(
                     "http://localhost:3000",
                     "http://10.0.2.2", // For Android emulator
-                    "http://localhost" // For iOS simulator
+                    "http://127.0.0.1" // For iOS simulator
             ));
             cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
             cfg.setAllowedHeaders(Arrays.asList("*")); // Allow all headers
