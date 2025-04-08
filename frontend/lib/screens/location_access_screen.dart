@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../home_screen1.dart';
+import './home_screen1.dart';
 
 
 class LocationAccessScreen extends StatelessWidget {
