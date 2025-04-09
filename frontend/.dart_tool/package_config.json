@@ -237,13 +237,13 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///C:/Users/Amiru/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.2",
+      "rootUri": "file:///C:/Users/Amiru/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///C:/Users/Amiru/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.5.2",
+      "rootUri": "file:///C:/Users/Amiru/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences-2.5.3",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -362,7 +362,7 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2025-04-08T12:33:47.020204Z",
+  "generated": "2025-04-09T07:50:25.322047Z",
   "generator": "pub",
   "generatorVersion": "3.7.2",
   "flutterRoot": "file:///C:/Flutter",
