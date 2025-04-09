@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="testing pipeline 3">
+
       <change beforePath="$PROJECT_DIR$/out/production/Odyssey/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/application.properties" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +115,7 @@
       <recent name="C:\Amiru\Bsc (hons) computer science\SDGP\Odyssey\frontend\lib\services" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main.dart">
+  <component name="RunManager" selected="Spring Boot.OdysseyApplication">
     <configuration name="GenerateSecretKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GenerateSecretKey" />
       <module name="Odyssey" />
@@ -158,7 +160,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Application.GenerateSecretKey" />
         <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="JUnit.OdysseyApplicationTests" />
