@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'bindings/bindings.dart';
-import 'services/auth_provider.dart'; // ✅ This is the correct path
-import 'screens/splash_screen.dart'; // ✅ Make sure SplashScreen exists here
+import 'services/auth_provider.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => AuthProvider()), // Provide AuthProvider globally
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: const MyApp(),
     ),

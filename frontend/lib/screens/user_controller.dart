@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'api_services.dart';
+
+import '../services/api_service.dart';
+
 
 class ProfileScreen extends StatelessWidget {
   final ApiService _apiService = ApiService();
@@ -10,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<Map<String, dynamic>>(
-      future: _apiService.getUserProfile(jwt),
+      future: _apiService.getUserProfile().then((res) => res.data as Map<String, dynamic>),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return CircularProgressIndicator();

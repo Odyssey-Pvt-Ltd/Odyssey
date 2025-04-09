@@ -33,6 +33,8 @@ class AuthProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  // ✅ THIS IS THE ONE YOU NEED
+
   bool get isLoggedIn => _jwt != null && _jwt!.isNotEmpty;
+
+  get userId => null;
 }

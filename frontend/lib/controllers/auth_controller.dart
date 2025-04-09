@@ -14,7 +14,12 @@ class AuthController extends GetxController {
     try {
       isLoading.value = true;
       final response = await _api.login(email, password);
-      await _auth.saveToken(response.data['jwt'], response.data['role']);
+      await _auth.saveToken(
+        response.data['jwt'],
+        response.data['role'],
+        response.data['id'], // or response.data['user']['id'] depending on your backend
+      );
+
       Get.to(() => HomeScreen());
     } catch (e) {
       Get.snackbar('Error', e.toString());
@@ -46,7 +51,12 @@ class AuthController extends GetxController {
       );
 
       final data = response.data;
-      await _auth.saveToken(data['jwt'], data['role']);
+      await _auth.saveToken(
+        response.data['jwt'],
+        response.data['role'],
+        response.data['id'], // or response.data['user']['id'] depending on your backend
+      );
+
       Get.offAll(() => HomeScreen());
       Get.snackbar('Success', 'Account created successfully!');
     } on DioException catch (e) {

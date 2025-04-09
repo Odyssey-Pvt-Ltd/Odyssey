@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../notes.dart';
 import '../plan_a_trip.dart';
+import '../services/api_service.dart';
 import '../services/auth_provider.dart';
 import 'profile_screen.dart';
-import 'api_services.dart';
 import 'explore_screen.dart';
 import 'things_to_do.dart';
 
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: FutureBuilder<Map<String, dynamic>>(
-        future: _apiService.fetchUserProfile(authProvider.jwt ?? ""),
+          future: _apiService.getUserProfile().then((res) => res.data as Map<String, dynamic>),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
