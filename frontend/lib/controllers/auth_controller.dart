@@ -88,3 +88,9 @@ class AuthController extends GetxController {
     }
   }
 }
+
+/*
+login()	Authenticates the user, saves token, navigates to home screen
+signUp()	Registers the user, navigates to login screen, shows success/error
+isLoading	Manages UI loading state using reactive programming
+Get.find()	Gets registered services using GetX’s dependency injection*/
