@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../controllers/auth_controller.dart';
 
 class SignUpScreen extends StatelessWidget {
+  SignUpScreen({super.key});
+
   final AuthController authController = Get.find<AuthController>();
 
   final TextEditingController nameController = TextEditingController();
