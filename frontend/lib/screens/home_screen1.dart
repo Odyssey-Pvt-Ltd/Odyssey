@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../notes.dart';
 import '../plan_a_trip.dart';
+import '../services/api_service.dart';
 import '../services/auth_provider.dart';
 import 'profile_screen.dart';
-import 'api_services.dart';
 import 'explore_screen.dart';
 import 'things_to_do.dart';
 

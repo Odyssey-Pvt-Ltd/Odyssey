@@ -14,7 +14,7 @@ class AuthController extends GetxController {
     try {
       isLoading.value = true;
       final response = await _api.login(email, password);
-      await _auth.saveToken(response.data['jwt'], response.data['role']);
+      await _auth.saveToken(response['jwt'], response['role']);
       Get.to(() => HomeScreen());
     } catch (e) {
       Get.snackbar('Error', e.toString());
@@ -45,7 +45,7 @@ class AuthController extends GetxController {
         userType: userType,
       );
 
-      final data = response.data;
+      final data = response;
       await _auth.saveToken(data['jwt'], data['role']);
       Get.offAll(() => HomeScreen());
       Get.snackbar('Success', 'Account created successfully!');

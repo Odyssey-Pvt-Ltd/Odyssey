@@ -45,17 +45,31 @@ class ApiService {
   //   }
   // }
 
-  // Add this method to fetch user profile
-  Future<Map<String, dynamic>> fetchUserProfile(String jwt) async {
+  // // Add this method to fetch user profile
+  // Future<Map<String, dynamic>> fetchUserProfile(String jwt) async {
+  //   final response = await http.get(
+  //     Uri.parse('$baseUrl/api/user/profile'), // Replace with your profile endpoint
+  //     headers: {'Authorization': 'Bearer $jwt'},
+  //   );
+  //
+  //   if (response.statusCode == 200) {
+  //     return jsonDecode(response.body); // Parse the response JSON
+  //   } else {
+  //     throw Exception('Failed to fetch user profile');
+  //   }
+  // }
+
+  Future<List<Map<String, dynamic>>> fetchAllShops(String jwt) async {
     final response = await http.get(
-      Uri.parse('$baseUrl/api/user/profile'), // Replace with your profile endpoint
+      Uri.parse('$baseUrl/api/shop'),
       headers: {'Authorization': 'Bearer $jwt'},
     );
 
     if (response.statusCode == 200) {
-      return jsonDecode(response.body); // Parse the response JSON
+      final List<dynamic> shops = jsonDecode(response.body);
+      return shops.cast<Map<String, dynamic>>();
     } else {
-      throw Exception('Failed to fetch user profile');
+      throw Exception('Failed to fetch shops');
     }
   }
 

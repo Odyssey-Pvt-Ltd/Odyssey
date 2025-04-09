@@ -1,60 +1,27 @@
-import 'package:dio/dio.dart';
-import 'package:get/get.dart' hide Response, FormData;
-import 'package:odyssey_app/services/auth_service.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-class ApiService extends GetxService {
-  late final Dio _dio;
-  final AuthService _authService = Get.find<AuthService>();
+class ApiService {
+  static const String baseUrl = "http://localhost:8081";
 
-  @override
-  void onInit() {
-    super.onInit();
+  // LOGIN
+  Future<Map<String, dynamic>> login(String email, String password) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/api/auth/SignIn'),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'email': email, 'password': password}),
+    );
 
-    _dio = Dio(BaseOptions(
-      baseUrl: 'http://localhost:8081/api',
-      connectTimeout: const Duration(seconds: 30),
-      receiveTimeout: const Duration(seconds: 30),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-    ));
-
-    _dio.interceptors.add(InterceptorsWrapper(
-      onRequest: (options, handler) async {
-        final token = _authService.token;
-        if (token != null) {
-          options.headers['Authorization'] = 'Bearer $token';
-        }
-        print('Sending request to ${options.uri}');
-        handler.next(options);
-      },
-      onError: (DioException error, handler) async {
-        print('API Error: ${error.message}');
-        print('Response: ${error.response?.data}');
-
-        if (error.response?.statusCode == 401) {
-          _authService.clearToken();
-        }
-
-        handler.next(error);
-      },
-    ));
-  }
-
-  Future<Response> login(String email, String password) async {
-    try {
-      return await _dio.post('/auth/SignIn', data: {
-        'email': email,
-        'password': password,
-      });
-    } on DioException catch (e) {
-      print('Login error: ${e.message}');
-      rethrow;
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      final errorData = jsonDecode(response.body);
+      throw Exception(errorData['message'] ?? 'Login failed');
     }
   }
 
-  Future<Response> signUp({
+  // SIGN UP
+  Future<Map<String, dynamic>> signUp({
     required String name,
     required String email,
     required String phoneNumber,
@@ -63,8 +30,10 @@ class ApiService extends GetxService {
     required String confirmPassword,
     required String userType,
   }) async {
-    try {
-      return await _dio.post('/auth/signup', data: {
+    final response = await http.post(
+      Uri.parse('$baseUrl/api/auth/signup'),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
         'name': name,
         'email': email,
         'phoneNumber': phoneNumber,
@@ -72,20 +41,77 @@ class ApiService extends GetxService {
         'password': password,
         'confirmPassword': confirmPassword,
         'userType': userType,
-      });
-    } on DioException catch (e) {
-      print('Signup error: ${e.message}');
-      print('Error response: ${e.response?.data}');
-      rethrow;
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      final errorData = jsonDecode(response.body);
+      throw Exception(errorData['message'] ?? 'Signup failed');
     }
   }
 
-  Future<Response> getUserProfile() async {
-    try {
-      return await _dio.get('/user/profile');
-    } on DioException catch (e) {
-      print('Get profile error: ${e.message}');
-      rethrow;
+  // GET USER PROFILE
+  Future<Map<String, dynamic>> fetchUserProfile(String jwt) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/api/user/profile'),
+      headers: {'Authorization': 'Bearer $jwt'},
+    );
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception('Failed to fetch user profile');
+    }
+  }
+
+  // GET ALL SHOPS (to find current vendor's shop)
+  Future<List<dynamic>> fetchAllShops(String jwt) async {
+    final response = await http.get(
+      Uri.parse('$baseUrl/api/shop'),
+      headers: {'Authorization': 'Bearer $jwt'},
+    );
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body) as List;
+    } else {
+      throw Exception('Failed to fetch shop list');
+    }
+  }
+
+  // CREATE SHOP (PUT)
+  Future<void> createShop({
+    required String jwt,
+    required int userId,
+    required String shopName,
+    required String description,
+    required String street,
+    required String city,
+    required String phoneNumber,
+  }) async {
+    final response = await http.put(
+      Uri.parse('$baseUrl/api/admin/shop'),
+      headers: {
+        'Authorization': 'Bearer $jwt',
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode({
+        "userId": userId,
+        "shopName": shopName,
+        "description": description,
+        "address": {
+          "street": street,
+          "city": city,
+        },
+        "phoneNumber": phoneNumber,
+        "images": [],
+      }),
+    );
+
+    if (response.statusCode != 200) {
+      final errorData = jsonDecode(response.body);
+      throw Exception(errorData['message'] ?? 'Failed to create shop');
     }
   }
 }

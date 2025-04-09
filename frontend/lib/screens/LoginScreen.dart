@@ -133,11 +133,11 @@ class LoginScreen extends StatelessWidget {
                     }
 
                     try {
-                      final response = await apiService.login(email, password);
-                      final data = response.data;
+                      final data = await apiService.login(email, password);
 
                       final jwt = data['jwt'];
                       final role = data['role'];
+
 
                       await Provider.of<AuthProvider>(context, listen: false).saveJwt(jwt, role);
 
