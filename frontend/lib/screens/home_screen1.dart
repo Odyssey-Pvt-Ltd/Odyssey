@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: const Icon(Icons.menu, color: Colors.black),
           onPressed: () {},
         ),
-        title: Image.asset('assets/logo.jpeg', height: 40),
+        title: Image.asset('assets/logo.jpeg', height: 140),
         centerTitle: true,
         actions: [
           IconButton(
