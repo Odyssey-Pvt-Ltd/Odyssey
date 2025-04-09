@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="testing pipeline 3">
-      <change afterPath="$PROJECT_DIR$/frontend/lib/screens/shop_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/home_screen1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/home_screen1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
