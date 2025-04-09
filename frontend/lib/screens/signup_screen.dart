@@ -1,160 +1,84 @@
 import 'package:flutter/material.dart';
-import 'package:odyssey_app/screens/signup_password_screen.dart';
+import 'package:get/get.dart';
+import '../controllers/auth_controller.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  final AuthController authController = Get.find<AuthController>();
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
+
+  final RxString selectedRole = 'ROLE_CUSTOMER'.obs;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
+      appBar: AppBar(title: const Text("Sign Up"), backgroundColor: Colors.black),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: ListView(
           children: [
-            SizedBox(height: 50),
-            // Logo
-            Image.asset(
-              'assets/logo.jpeg',
-              width: 400,
-              height: 300,
-            ),
-            SizedBox(height: 20),
-            // Tab bar for Login and Signup
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Text(
-                        'Login',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Signup',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 30),
-            // Signup Header
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Sign up',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            // Name Field
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Name',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[100],
-                ),
-              ),
-            ),
-            SizedBox(height: 15),
-            // Email Field
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Email',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[100],
-                ),
-              ),
-            ),
-            SizedBox(height: 15),
-            // Phone Number Field
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  hintText: 'Phone number',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[100],
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            // Continue Button
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => PasswordSetupScreen()),
-                    );
-                  },
-                  child: Text(
-                    'Continue',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
+            _buildTextField(nameController, "Name"),
+            _buildTextField(emailController, "Email"),
+            _buildTextField(phoneController, "Phone Number"),
+            _buildTextField(addressController, "Address"),
+            _buildTextField(passwordController, "Password", isObscure: true),
+            _buildTextField(confirmPasswordController, "Confirm Password", isObscure: true),
+            const SizedBox(height: 16),
+            Obx(() => DropdownButton<String>(
+              value: selectedRole.value,
+              items: ['ROLE_CUSTOMER', 'ROLE_VENDOR'].map((role) {
+                return DropdownMenuItem<String>(
+                  value: role,
+                  child: Text(role),
+                );
+              }).toList(),
+              onChanged: (val) => selectedRole.value = val!,
+            )),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+              onPressed: () async {
+                if (passwordController.text != confirmPasswordController.text) {
+                  Get.snackbar("Error", "Passwords do not match");
+                  return;
+                }
+
+                await authController.signUp(
+                  name: nameController.text.trim(),
+                  email: emailController.text.trim(),
+                  phoneNumber: phoneController.text.trim(),
+                  address: addressController.text.trim(),
+                  password: passwordController.text,
+                  confirmPassword: confirmPasswordController.text,
+                  userType: selectedRole.value,
+                );
+              },
+              child: const Text("Create Account"),
             ),
           ],
         ),
       ),
     );
   }
+
+  Widget _buildTextField(TextEditingController controller, String hint, {bool isObscure = false}) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: TextField(
+        controller: controller,
+        obscureText: isObscure,
+        decoration: InputDecoration(
+          labelText: hint,
+          filled: true,
+          fillColor: Colors.grey[200],
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        ),
+      ),
+    );
+  }
 }
