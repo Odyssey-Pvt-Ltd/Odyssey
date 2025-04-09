@@ -3,18 +3,37 @@ import 'package:provider/provider.dart';
 import '../notes.dart';
 import '../plan_a_trip.dart';
 import '../services/auth_provider.dart';
+import 'profile_screen.dart';
 import 'api_services.dart';
 import 'explore_screen.dart';
 import 'things_to_do.dart';
 
-class HomeScreen extends StatelessWidget {
+
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   final ApiService _apiService = ApiService();
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    if (index == 2) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ProfileScreen()),
+      );
+    }
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     final authProvider = Provider.of<AuthProvider>(context);
 
-    // ✅ Redirect or show fallback if not logged in
     if (!authProvider.isLoggedIn) {
       return const Scaffold(
         body: Center(child: Text("User not authenticated")),
@@ -29,7 +48,7 @@ class HomeScreen extends StatelessWidget {
           icon: const Icon(Icons.menu, color: Colors.black),
           onPressed: () {},
         ),
-        title: Image.asset('assets/logo.jpeg', height: 40),
+        title: Image.asset('assets/logo.jpeg', height: 140),
         centerTitle: true,
         actions: [
           IconButton(
@@ -102,6 +121,8 @@ class HomeScreen extends StatelessWidget {
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.map), label: ''),
