@@ -10,30 +10,26 @@ class PreferencesScreen extends StatefulWidget {
 class _PreferencesScreenState extends State<PreferencesScreen> {
   // Map to store the selection state of preferences
   Map<String, bool> preferences = {
-    ' 1': false,
-    ' 2': false,
-    ' 3': false,
-    'Placeholder 4': false,
-    'P 5': false,
-    'Placeholder 6': false,
-    ' 7': false,
-    'Placeholder 8': false,
-    ' 9': false,
-    'Placeholder 10': false,
-    'Placeholder 11': false,
-    ' 12': false,
-    'Placeholder 13': false,
-    'P 14': false,
-    'Plr 15': false,
-    'fvv': false,
-    ' fvf': false,
-    'Placeholder r': false,
-    'fvfv': false,
-    'ffffffffffvfevf': false,
-    ' vfvf3': false,
-    'P': false,
-    ' 93': false,
-    '3 10': false,
+    'Adventure': false,
+    'Beach': false,
+    'City Tours': false,
+    'Hiking': false,
+    'Cultural': false,
+    'Food & Drink': false,
+    'Nature': false,
+    'Shopping': false,
+    'Sightseeing': false,
+    'Nightlife': false,
+    'Relaxation': false,
+    'Sports': false,
+    'Historical': false,
+    'Art & Museums': false,
+    'Family Friendly': false,
+    'Romantic': false,
+    'Luxury': false,
+    'Budget': false,
+    'Solo Travel': false,
+    'Group Travel': false,
   };
 
   @override
@@ -48,15 +44,15 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: IconButton(
-                icon: Icon(Icons.arrow_back, color: Colors.black),
+                icon: const Icon(Icons.arrow_back, color: Colors.black),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pop(context); // Go back to the previous screen
                 },
               ),
             ),
             // Title
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
               child: Text(
                 'Add your preferences',
                 style: TextStyle(
@@ -65,11 +61,11 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             // Preferences Grid
             Expanded(
               child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Wrap(
                   spacing: 12,
                   runSpacing: 12,
@@ -85,11 +81,15 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Skip Button
                   TextButton(
                     onPressed: () {
+
+                      // Navigate to HomeScreen
                       Navigator.pushReplacementNamed(context, '/home');
+
                     },
-                    child: Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         color: Colors.black,
@@ -97,19 +97,25 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                       ),
                     ),
                   ),
+                  // Next Button
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
-                      padding:
-                      EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 32, vertical: 16),
+
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/location');
+
+                      // Navigate to HomeScreen
+                      Navigator.pushReplacementNamed(context, '/home');
+
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
@@ -146,7 +152,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           color: isSelected ? Colors.black : Colors.grey[200],
           borderRadius: BorderRadius.circular(20),
         ),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Text(
           label,
           style: TextStyle(

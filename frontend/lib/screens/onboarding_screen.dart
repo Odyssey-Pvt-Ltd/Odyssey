@@ -19,7 +19,7 @@ class OnboardingScreen extends StatelessWidget {
             child: Image.asset(
               'assets/onboardingpage.jpg', // Path to the map image
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.7,
+              height: MediaQuery.of(context).size.height * 0.6,
               fit: BoxFit.cover,
             ),
           ),

@@ -1,38 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'screens/auth_provider.dart';
-import 'screens/LoginScreen.dart';
-import 'home_screen1.dart';
+import 'package:get/get.dart';
+import 'package:odyssey_app/screens/splash_screen.dart';
+
+import 'bindings/bindings.dart';
 
 void main() {
-  runApp(
-      ChangeNotifierProvider(
-          create: (_) => AuthProvider(),
-          child: MyApp(),
-          ),
-      );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Consumer<AuthProvider>(
-          builder: (context, authProvider, child) {
-            // Check if the user is logged in (JWT exists)
-            if (authProvider.jwt == null) {
-              return LoginScreen(); // Show login screen if not logged in
-            } else {
-              return HomeScreen(); // Show home screen if logged in
-            }
-          },
-        ),
-        routes: {
-    '/login': (context) => LoginScreen(),
-    '/home': (context) => HomeScreen(),
-
-    },
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(), // Direct widget reference
+      initialBinding: AppBindings(),
+      theme: ThemeData(primarySwatch: Colors.blue),
     );
   }
 }
