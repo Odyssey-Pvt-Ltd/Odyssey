@@ -3,7 +3,7 @@ import 'package:odyssey_app/screens/things_to_do.dart';
 import 'package:provider/provider.dart';
 import '../notes.dart';
 import '../plan_a_trip.dart';
-import 'auth_provider.dart';
+import '../services/auth_provider.dart';
 import 'api_services.dart';
 import 'explore_screen.dart';
 

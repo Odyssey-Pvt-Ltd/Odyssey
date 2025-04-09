@@ -1,82 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/auth_controller.dart';
+import 'package:provider/provider.dart';
+import '../services/auth_provider.dart';
+import 'home_screen1.dart';
+import 'LoginScreen.dart';
 
-class SignUpScreen extends StatelessWidget {
-  final AuthController authController = Get.find<AuthController>();
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController addressController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
 
-  final RxString selectedRole = 'ROLE_CUSTOMER'.obs;
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _init();
+  }
+
+  void _init() async {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    await Future.delayed(const Duration(seconds: 2));
+    await authProvider.loadJwt();
+
+    if (authProvider.isLoggedIn) {
+      Get.offAll(() => HomeScreen());
+    } else {
+      Get.offAll(() => LoginScreen());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Sign Up"), backgroundColor: Colors.black),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: ListView(
-          children: [
-            _buildTextField(nameController, "Name"),
-            _buildTextField(emailController, "Email"),
-            _buildTextField(phoneController, "Phone Number"),
-            _buildTextField(addressController, "Address"),
-            _buildTextField(passwordController, "Password", isObscure: true),
-            _buildTextField(confirmPasswordController, "Confirm Password", isObscure: true),
-            const SizedBox(height: 16),
-            Obx(() => DropdownButton<String>(
-              value: selectedRole.value,
-              items: ['ROLE_CUSTOMER', 'ROLE_VENDOR'].map((role) {
-                return DropdownMenuItem<String>(
-                  value: role,
-                  child: Text(role),
-                );
-              }).toList(),
-              onChanged: (val) => selectedRole.value = val!,
-            )),
-            const SizedBox(height: 24),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-              onPressed: () async {
-                if (passwordController.text != confirmPasswordController.text) {
-                  Get.snackbar("Error", "Passwords do not match");
-                  return;
-                }
-
-                await authController.signUp(
-                  name: nameController.text.trim(),
-                  email: emailController.text.trim(),
-                  phoneNumber: phoneController.text.trim(),
-                  address: addressController.text.trim(),
-                  password: passwordController.text,
-                  confirmPassword: confirmPasswordController.text,
-                  userType: selectedRole.value,
-                );
-              },
-              child: const Text("Create Account"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTextField(TextEditingController controller, String hint, {bool isObscure = false}) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: TextField(
-        controller: controller,
-        obscureText: isObscure,
-        decoration: InputDecoration(
-          labelText: hint,
-          filled: true,
-          fillColor: Colors.grey[200],
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Image.asset(
+          'assets/logo.jpeg',
+          width: 400,
+          height: 400,
         ),
       ),
     );
