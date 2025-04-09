@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:provider/provider.dart';
 import '../services/auth_provider.dart';
-import 'api_services.dart';
+import 'listing_screen.dart'; // 👈 make sure this exists
 
 class ShopScreen extends StatefulWidget {
   final int userId;
@@ -93,7 +93,22 @@ class _ShopScreenState extends State<ShopScreen> {
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
-              )
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => ListingScreen(shopId: widget.userId)),
+                  );
+                },
+                child: const Text("Go to Listing"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                ),
+              ),
             ],
           ),
         ),

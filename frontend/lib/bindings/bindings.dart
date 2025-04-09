@@ -5,9 +5,17 @@ import '../controllers/auth_controller.dart';
 
 class AppBindings implements Bindings {
   @override
-  void dependencies() {
-    Get.lazyPut(() => ApiService(), fenix: true);
-    Get.lazyPut(() => AuthService(), fenix: true);
+  void dependencies() async {
+    // Load AuthService and initialize JWT
+    await Get.putAsync<AuthService>(() async {
+      final authService = AuthService();
+      await authService.init();
+      return authService;
+    });
+
+
+    Get.put(ApiService());
+
     Get.lazyPut(() => AuthController(), fenix: true);
   }
 }

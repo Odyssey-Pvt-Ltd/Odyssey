@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 import 'bindings/bindings.dart';
-import 'services/auth_provider.dart'; // ✅ This is the correct path
-import 'screens/splash_screen.dart'; // ✅ Make sure SplashScreen exists here
+import 'screens/splash_screen.dart';
 
 void main() {
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => AuthProvider()), // Provide AuthProvider globally
-      ],
-      child: const MyApp(),
-    ),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
       initialBinding: AppBindings(),
+      home: const SplashScreen(),
       theme: ThemeData(primarySwatch: Colors.blue),
     );
   }

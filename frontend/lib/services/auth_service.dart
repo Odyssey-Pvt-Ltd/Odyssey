@@ -7,13 +7,11 @@ class AuthService extends GetxService {
 
   String? get token => _token.value.isEmpty ? null : _token.value;
 
-  @override
-  void onInit() async {
-    super.onInit();
+  Future<void> init() async {
     _token.value = await _storage.read(key: 'jwt') ?? '';
   }
 
-  Future<void> saveToken(String newToken,String role) async {
+  Future<void> saveToken(String newToken, String role) async {
     _token.value = newToken;
     await _storage.write(key: 'jwt', value: newToken);
     await _storage.write(key: 'role', value: role);

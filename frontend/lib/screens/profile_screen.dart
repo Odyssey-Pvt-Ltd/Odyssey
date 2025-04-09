@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/auth_provider.dart';
 import 'api_services.dart';
-import 'shop_screen.dart'; // ✅ Import ShopScreen
+import 'shop_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   final ApiService _apiService = ApiService();
@@ -56,7 +56,7 @@ class ProfileScreen extends StatelessWidget {
                     );
                   },
                   icon: const Icon(Icons.store, color: Colors.white),
-                  label: const Text("Go to Shop", style: TextStyle(color: Colors.white)),
+                  label: const Text("My Shop", style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.teal,
                     padding: const EdgeInsets.symmetric(vertical: 14),

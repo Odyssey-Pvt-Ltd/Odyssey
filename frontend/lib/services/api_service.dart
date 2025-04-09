@@ -23,15 +23,20 @@ class ApiService extends GetxService {
     _dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
         final token = _authService.token;
+
         if (token != null) {
           options.headers['Authorization'] = 'Bearer $token';
+          print('✅ Attached token to request: $token');
+        } else {
+          print('❌ No token found! Authorization header will NOT be added.');
         }
-        print('Sending request to ${options.uri}');
+
+        print('📤 Sending request to ${options.uri}');
         handler.next(options);
       },
       onError: (DioException error, handler) async {
-        print('API Error: ${error.message}');
-        print('Response: ${error.response?.data}');
+        print('❌ API Error: ${error.message}');
+        print('🔍 Response: ${error.response?.data}');
 
         if (error.response?.statusCode == 401) {
           _authService.clearToken();
@@ -88,4 +93,24 @@ class ApiService extends GetxService {
       rethrow;
     }
   }
+
+  Future<Response> createListing(Map<String, dynamic> data) async {
+    try {
+      return await _dio.post('/admin/listing', data: data);
+    } on DioException catch (e) {
+      print('Create listing error: ${e.message}');
+      print('Response: ${e.response?.data}');
+      rethrow;
+    }
+  }
+
+  Future<Response> getListingsByShop(int shopId) async {
+    try {
+      return await _dio.get('/shop/$shopId/listings');
+    } on DioException catch (e) {
+      print('Fetch listings error: ${e.message}');
+      rethrow;
+    }
+  }
+
 }

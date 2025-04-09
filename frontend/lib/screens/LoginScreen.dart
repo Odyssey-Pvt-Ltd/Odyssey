@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:odyssey_app/screens/home_screen1.dart';
-import 'package:odyssey_app/services/api_service.dart';
-import 'package:provider/provider.dart';
-import '../services/auth_provider.dart';
-import 'SignUpScreen.dart';
+import 'package:odyssey_app/controllers/auth_controller.dart';
+import 'package:odyssey_app/screens/SignUpScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -13,7 +10,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
-    final apiService = Get.find<ApiService>();
+    final authController = Get.find<AuthController>();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -48,7 +45,8 @@ class LoginScreen extends StatelessWidget {
                   Expanded(
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => SignUpScreen()));
                       },
                       child: const Text('Signup', style: TextStyle(color: Colors.black)),
                     ),
@@ -68,7 +66,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // Email
+            // Email Field
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
@@ -83,7 +81,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 15),
 
-            // Password
+            // Password Field
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
@@ -123,7 +121,7 @@ class LoginScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   ),
-                  onPressed: () async {
+                  onPressed: () {
                     final email = emailController.text.trim();
                     final password = passwordController.text;
 
@@ -132,20 +130,8 @@ class LoginScreen extends StatelessWidget {
                       return;
                     }
 
-                    try {
-                      final response = await apiService.login(email, password);
-                      final data = response.data;
-
-                      final jwt = data['jwt'];
-                      final role = data['role'];
-
-                      await Provider.of<AuthProvider>(context, listen: false).saveJwt(jwt, role);
-
-                      Get.offAll(() => HomeScreen());
-                      Get.snackbar("Success", "Login successful");
-                    } catch (e) {
-                      Get.snackbar("Login Failed", "Invalid email or password");
-                    }
+                    // ✅ Call AuthController to handle login and token saving
+                    authController.login(email, password);
                   },
                   child: const Text('Login', style: TextStyle(color: Colors.white, fontSize: 16)),
                 ),
