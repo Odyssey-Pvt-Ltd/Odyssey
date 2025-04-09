@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/auth_provider.dart';
 import 'api_services.dart';
+import 'shop_screen.dart'; // ✅ Import ShopScreen
 
 class ProfileScreen extends StatelessWidget {
   final ApiService _apiService = ApiService();
@@ -29,6 +30,7 @@ class ProfileScreen extends StatelessWidget {
           }
 
           final user = snapshot.data!;
+          final isVendor = user['userType'] == 'ROLE_VENDOR';
 
           return ListView(
             padding: const EdgeInsets.all(16),
@@ -44,11 +46,29 @@ class ProfileScreen extends StatelessWidget {
               _buildTile("Phone", user['phoneNumber']),
               _buildTile("Address", user['address']),
               _buildTile("Role", user['userType']),
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
+              if (isVendor) ...[
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ShopScreen(userId: user['id'])),
+                    );
+                  },
+                  icon: const Icon(Icons.store, color: Colors.white),
+                  label: const Text("Go to Shop", style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.teal,
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  ),
+                ),
+                const SizedBox(height: 20),
+              ],
               ElevatedButton.icon(
                 onPressed: () {
                   authProvider.clearJwt();
-                  Navigator.pushReplacementNamed(context, '/'); // back to splash/login
+                  Navigator.pushReplacementNamed(context, '/');
                 },
                 icon: const Icon(Icons.logout, color: Colors.white),
                 label: const Text("Logout", style: TextStyle(color: Colors.white)),
@@ -57,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
-              )
+              ),
             ],
           );
         },
