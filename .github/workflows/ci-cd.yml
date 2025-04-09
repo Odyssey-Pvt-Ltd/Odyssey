@@ -15,22 +15,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.13.0'
-
-      - name: Navigate to frontend
-        run: cd frontend
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Run Flutter tests
-        run: flutter test
-
-      - name: Build Flutter app
-        run: flutter build apk --release
+      - name: Build and test Flutter app using Docker
+        run: |
+          cd frontend
+          docker build -t odyssey-frontend .
+          docker run odyssey-frontend
 
   backend:
     runs-on: ubuntu-latest
@@ -38,25 +27,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: Navigate to backend
-        run: cd backend
-
-      - name: Verify mvnw and pom.xml exist
+      - name: Build and test Spring Boot app using Docker
         run: |
-          ls -l mvnw
-          ls -l pom.xml
-
-      - name: Set execute permissions for mvnw
-        run: chmod +x mvnw
-
-      - name: Build Spring Boot project
-        run: ./mvnw clean package
-
-      - name: Run Spring Boot tests
-        run: ./mvnw test
+          cd backend
+          docker build -t odyssey-backend .
+          docker run odyssey-backend ./mvnw test
