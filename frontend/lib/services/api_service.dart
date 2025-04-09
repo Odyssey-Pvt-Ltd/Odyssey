@@ -42,6 +42,10 @@ class ApiService extends GetxService {
 
   // Optional: Getter to expose Dio instance for API calls elsewhere
   Dio get client => _dio;
+
+  login(String email, String password) {}
+
+  signUp({required String name, required String email, required String phoneNumber, required String address, required String password, required String userType}) {}
 }
 
 
