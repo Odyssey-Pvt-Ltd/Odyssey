@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="testing pipeline 3">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/lib/screens/profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/api_services.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/api_services.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/lib/screens/home_screen1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/home_screen1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/services/api_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/services/api_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +21,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Dart File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Dart File" />
       </list>
     </option>
   </component>
@@ -214,7 +208,7 @@
       <workItem from="1744112521985" duration="728000" />
       <workItem from="1744115763178" duration="10152000" />
       <workItem from="1744171434185" duration="4023000" />
-      <workItem from="1744180129518" duration="4056000" />
+      <workItem from="1744180129518" duration="5265000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
