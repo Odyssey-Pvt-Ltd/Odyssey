@@ -43,19 +43,36 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         return request -> {
             CorsConfiguration cfg = new CorsConfiguration();
-            cfg.setAllowedOrigins(Arrays.asList(
-                    "http://localhost:3000",
-                    "http://10.0.2.2", // For Android emulator
-                    "http://127.0.0.1" // For iOS simulator
-            ));
+            cfg.addAllowedOriginPattern("*"); // ✅ Allow all origins for dev
             cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-            cfg.setAllowedHeaders(Arrays.asList("*")); // Allow all headers
+            cfg.setAllowedHeaders(Arrays.asList("*")); // Accept all headers
             cfg.setAllowCredentials(true);
             cfg.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
             cfg.setMaxAge(3600L);
             return cfg;
         };
     }
+
+
+
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        return request -> {
+//            CorsConfiguration cfg = new CorsConfiguration();
+//            cfg.setAllowedOrigins(Arrays.asList(
+//                    "http://localhost:3000",
+//                    "http://127.0.0.1:3000",
+//                    "http://localhost:8080",
+//                    "http://127.0.0.1:8080"
+//            ));
+//            cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+//            cfg.setAllowedHeaders(Arrays.asList("*"));
+//            cfg.setAllowCredentials(true);
+//            cfg.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
+//            cfg.setMaxAge(3600L);
+//            return cfg;
+//        };
+//    }
 
 //    @Bean
 //    public CorsConfigurationSource corsConfigurationSource() {

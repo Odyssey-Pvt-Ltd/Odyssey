@@ -10,22 +10,18 @@ class ApiService extends GetxService {
   void onInit() {
     super.onInit();
 
-    // Configure Dio with base options
     _dio = Dio(BaseOptions(
-      // Use 10.0.2.2 for Android emulator, 127.0.0.1 for iOS simulator
-      baseUrl: 'http://10.0.2.2:8081/api',
-      connectTimeout: const Duration(seconds: 10),
-      receiveTimeout: const Duration(seconds: 10),
+      baseUrl: 'http://127.0.0.1:8081/api', // ✅ Changed from localhost
+      connectTimeout: const Duration(seconds: 30),
+      receiveTimeout: const Duration(seconds: 30),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
     ));
 
-    // Add interceptors
     _dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
-        // Add auth token if available
         final token = _authService.token;
         if (token != null) {
           options.headers['Authorization'] = 'Bearer $token';
@@ -37,10 +33,8 @@ class ApiService extends GetxService {
         print('API Error: ${error.message}');
         print('Response: ${error.response?.data}');
 
-        // Handle 401 Unauthorized errors
         if (error.response?.statusCode == 401) {
           _authService.clearToken();
-          // You might want to navigate to login screen here
         }
 
         handler.next(error);
@@ -50,15 +44,10 @@ class ApiService extends GetxService {
 
   Future<Response> login(String email, String password) async {
     try {
-      final response = await _dio.post(
-        '/auth/SignIn',
-        data: {
-          'email': email,
-          'password': password,
-        },
-      );
-
-      return response;
+      return await _dio.post('/auth/SignIn', data: {
+        'email': email,
+        'password': password,
+      });
     } on DioException catch (e) {
       print('Login error: ${e.message}');
       rethrow;
@@ -71,28 +60,22 @@ class ApiService extends GetxService {
     required String phoneNumber,
     required String address,
     required String password,
+    required String confirmPassword,
     required String userType,
   }) async {
     try {
-      final response = await _dio.post(
-        '/auth/signup',
-        data: {
-          'name': name,
-          'email': email,
-          'phoneNumber': phoneNumber,
-          'address': address,
-          'password': password,
-          'userType': userType,
-          'confirmPassword': password, // Assuming your backend expects this
-        },
-      );
-
-      return response;
+      return await _dio.post('/auth/signup', data: {
+        'name': name,
+        'email': email,
+        'phoneNumber': phoneNumber,
+        'address': address,
+        'password': password,
+        'confirmPassword': confirmPassword,
+        'userType': userType,
+      });
     } on DioException catch (e) {
       print('Signup error: ${e.message}');
-      if (e.response != null) {
-        print('Error response data: ${e.response?.data}');
-      }
+      print('Error response: ${e.response?.data}');
       rethrow;
     }
   }
@@ -105,6 +88,4 @@ class ApiService extends GetxService {
       rethrow;
     }
   }
-
-// Add other API methods as needed
 }

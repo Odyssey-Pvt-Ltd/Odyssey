@@ -29,32 +29,29 @@ class AuthController extends GetxController {
     required String phoneNumber,
     required String address,
     required String password,
+    required String confirmPassword,
     required String userType,
   }) async {
     try {
       isLoading.value = true;
+
       final response = await _api.signUp(
         name: name,
         email: email,
         phoneNumber: phoneNumber,
         address: address,
         password: password,
+        confirmPassword: confirmPassword,
         userType: userType,
       );
 
-      if (response.statusCode == 200) {
-        final data = response.data;
-        await _auth.saveToken(data['jwt'], data['role']);
-        Get.offAll(() => HomeScreen());
-        Get.snackbar('Success', 'Account created successfully!');
-      } else {
-        throw Exception(response.data['message'] ?? 'Signup failed');
-      }
+      final data = response.data;
+      await _auth.saveToken(data['jwt'], data['role']);
+      Get.offAll(() => HomeScreen());
+      Get.snackbar('Success', 'Account created successfully!');
     } on DioException catch (e) {
-      final errorMessage = e.response?.data['message'] ?? e.message;
-      Get.snackbar('Error', errorMessage.toString());
-    } catch (e) {
-      Get.snackbar('Error', e.toString());
+      final message = e.response?.data['message'] ?? e.message;
+      Get.snackbar('Signup Error', message.toString());
     } finally {
       isLoading.value = false;
     }
