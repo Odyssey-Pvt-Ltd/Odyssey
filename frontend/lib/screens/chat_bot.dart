@@ -1,33 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: ChatScreen(),
-  ));
-}
-
-class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key});
+class ChatBotScreen extends StatefulWidget {
+  const ChatBotScreen({super.key});
 
   @override
-  _ChatScreenState createState() {
-    return _ChatScreenState();
-  }
+  State<ChatBotScreen> createState() => _ChatBotScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _ChatBotScreenState extends State<ChatBotScreen> {
   final TextEditingController _controller = TextEditingController();
-  final List<Map<String, dynamic>> _messages = [
-    {"text": "Hello! How can I assist you?", "isUser": false},
-    {"text": "I need help planning my trip.", "isUser": true},
-  ];
+  final List<String> _messages = [];
+  final Dio _dio = Dio();
 
-  void _sendMessage() {
-    if (_controller.text.trim().isNotEmpty) {
+  Future<void> _sendMessage() async {
+    final message = _controller.text.trim();
+    if (message.isEmpty) return;
+
+    setState(() {
+      _messages.add("You: $message");
+      _controller.clear();
+    });
+
+    try {
+      final response = await _dio.post(
+        'http://localhost:8081/api/chat',
+        data: {'message': message},
+      );
+      final botReply = response.data['response'] ?? "Sorry, I couldn't understand that.";
+
       setState(() {
-        _messages.add({"text": _controller.text.trim(), "isUser": true});
-        _controller.clear();
+        _messages.add("AI: $botReply");
+      });
+    } catch (e) {
+      setState(() {
+        _messages.add("AI: Error connecting to bot.");
       });
     }
   }
@@ -36,18 +43,8 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: const Text(
-          'Automatic Planner',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+        title: const Text("AI Trip Planner"),
+        backgroundColor: Colors.black,
       ),
       body: Column(
         children: [
@@ -55,57 +52,37 @@ class _ChatScreenState extends State<ChatScreen> {
             child: ListView.builder(
               padding: const EdgeInsets.all(16),
               itemCount: _messages.length,
-              itemBuilder: (context, index) {
-                final message = _messages[index];
-                return Align(
-                  alignment:
-                  message["isUser"] ? Alignment.centerRight : Alignment.centerLeft,
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 6),
-                    padding: const EdgeInsets.all(12),
-                    constraints: const BoxConstraints(maxWidth: 250),
-                    decoration: BoxDecoration(
-                      color: message["isUser"]
-                          ? Colors.brown.shade600
-                          : Colors.grey.shade700,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Text(
-                      message["text"],
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                  ),
-                );
-              },
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: Text(_messages[index]),
+              ),
             ),
           ),
+          const Divider(height: 1),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
                 Expanded(
                   child: TextField(
                     controller: _controller,
-                    decoration: InputDecoration(
-                      hintText: "ask something...",
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide.none,
-                      ),
-                      filled: true,
-                      fillColor: Colors.grey.shade200,
+                    decoration: const InputDecoration(
+                      hintText: "Ask me about your trip...",
+                      border: OutlineInputBorder(),
                     ),
                   ),
                 ),
                 const SizedBox(width: 8),
-                IconButton(
-                  icon: const Icon(Icons.send, color: Colors.black),
+                ElevatedButton(
                   onPressed: _sendMessage,
+                  child: const Icon(Icons.send),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),
                 ),
               ],
             ),
-          ),
+          )
         ],
       ),
     );

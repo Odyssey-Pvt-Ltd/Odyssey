@@ -249,7 +249,7 @@
     },
     {
       "name": "shared_preferences_android",
-      "rootUri": "file:///C:/Users/Amiru/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_android-2.4.8",
+      "rootUri": "file:///C:/Users/Amiru/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_android-2.4.9",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },
@@ -362,7 +362,7 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2025-04-09T07:50:25.322047Z",
+  "generated": "2025-04-10T04:16:24.145420Z",
   "generator": "pub",
   "generatorVersion": "3.7.2",
   "flutterRoot": "file:///C:/Flutter",
