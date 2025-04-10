@@ -88,4 +88,25 @@ class ApiService extends GetxService {
       rethrow;
     }
   }
+
+  Future<Response> createNote(String title, String content) async {
+    try {
+      final tempDio = Dio(BaseOptions(
+        baseUrl: 'http://localhost:8081',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      ));
+      return await tempDio.post(
+        '/notes',
+        data: {"title": title, "content": content},
+      );
+    } on DioException catch (e) {
+      print('Create note error: ${e.message}');
+      print('Response: ${e.response?.data}');
+      rethrow;
+    }
+  }
+
+
 }

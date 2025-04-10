@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="testing pipeline 3">
-
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/application.properties" afterDir="false" />
-
+      <change afterPath="$PROJECT_DIR$/frontend/lib/screens/Add_Note_Screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/notes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/notes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/services/api_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/services/api_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/config/JwtTokenValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/config/JwtTokenValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/config/SecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +119,7 @@
       <recent name="C:\Amiru\Bsc (hons) computer science\SDGP\Odyssey\frontend\lib\services" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.OdysseyApplication">
+  <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="GenerateSecretKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GenerateSecretKey" />
       <module name="Odyssey" />
@@ -160,6 +164,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Application.GenerateSecretKey" />
         <item itemvalue="JUnit.OdysseyApplicationTests" />
         <item itemvalue="JUnit.OdysseyApplicationTests" />
@@ -208,6 +213,7 @@
       <workItem from="1744115763178" duration="10152000" />
       <workItem from="1744171434185" duration="4023000" />
       <workItem from="1744180129518" duration="7414000" />
+      <workItem from="1744251912523" duration="1643000" />
     </task>
     <task id="LOCAL-00001" summary="adding getter and setter annotations for methods in user class">
       <option name="closed" value="true" />
