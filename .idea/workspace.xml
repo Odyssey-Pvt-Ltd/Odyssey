@@ -5,31 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10d63cf-0d3d-4795-b103-34e0f67ad2d7" name="Changes" comment="testing pipeline 3">
-      <change afterPath="$PROJECT_DIR$/frontend/assets/jaipur.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/rome.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/train.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/plan_a_trip.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/plan_a_trip.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/chat_bot.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/chat_bot.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/manual_planner_screen1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/manual_planner_screen1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/things_to_do.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/things_to_do.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/Request/CreateListingRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/Request/CreateListingRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/Request/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/Request/LoginRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/dto/ShopDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/dto/ShopDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/FavItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/FavItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/FavListing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/FavListing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Listing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Listing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Restaurant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Shop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Vehicles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/model/Vehicles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/response/AuthResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Odyssey/com/Odyssey/Odyssey/response/AuthResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/screens/explore_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/screens/explore_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
