@@ -29,6 +29,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/category/").authenticated()
                         .requestMatchers("/api/admin/").hasAnyRole("VENDOR", "ADMIN")
                         .requestMatchers("/api/").authenticated()
+                        .requestMatchers("/api/admin/shop", "/api/admin/listing", "/api/shop/**").permitAll()
                         .anyRequest().permitAll()
                 )
                 .csrf(csrf -> csrf.disable())

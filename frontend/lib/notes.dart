@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:odyssey_app/screens/Add_Note_Screen.dart';
 
 class NotesScreen extends StatelessWidget {
   @override
@@ -27,7 +30,7 @@ class NotesScreen extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 20.0),
         child: FloatingActionButton.extended(
           onPressed: () {
-            // Add your note-creation logic here
+            Get.to(() => AddNoteScreen());
           },
           label: Text("Add note"),
           icon: Icon(Icons.add),
@@ -35,6 +38,7 @@ class NotesScreen extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: BottomNavigationBar(
         items: [

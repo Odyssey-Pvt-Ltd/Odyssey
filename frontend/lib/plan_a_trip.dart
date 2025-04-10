@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:odyssey_app/screens/chat_bot.dart';
 import 'package:odyssey_app/screens/manual_planner_screen1.dart';
 
-
-
 class PlanTripScreen extends StatelessWidget {
   const PlanTripScreen({super.key});
 
@@ -11,16 +9,10 @@ class PlanTripScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: const Text("Plan a Trip"),
+        leading: BackButton(color: Colors.black),
+        title: const Text("Plan a Trip", style: TextStyle(color: Colors.black)),
         centerTitle: true,
         backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -30,12 +22,13 @@ class PlanTripScreen extends StatelessWidget {
           children: [
             SizedBox(
               height: 200,
-              child: PageView(
-                children: [
-                  travelImage('https://source.unsplash.com/800x600/?train,bridge'),
-                  travelImage('https://source.unsplash.com/800x600/?city,architecture'),
-                  travelImage('https://source.unsplash.com/800x600/?mountains,travel'),
-                ],
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  'assets/mirissa.jpg',
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(height: 16),
@@ -44,10 +37,27 @@ class PlanTripScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            actionButton(context, "Plan Manually", ManualPlannerPage()),
-            const SizedBox(height: 12),
-            actionButton(context, "Automatic", ChatScreen()),
-            const SizedBox(height: 16),
+
+            // Centered Buttons
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: actionButton(context, "Plan Manually", ManualPlannerPage()),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: actionButton(context, "Generate Trip Plan with AI Chat Bot", const ChatBotScreen()),
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
@@ -62,24 +72,6 @@ class PlanTripScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Map'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
-      ),
-    );
-  }
-
-  Widget travelImage(String imageUrl) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
-      child: Image.network(imageUrl, width: double.infinity, fit: BoxFit.cover),
     );
   }
 
@@ -88,16 +80,17 @@ class PlanTripScreen extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         padding: const EdgeInsets.symmetric(vertical: 14),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => page),
-        );
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
       },
-      child: Text(title, style: const TextStyle(fontSize: 16)),
+      child: Text(
+        title,
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontSize: 14),
+      ),
     );
   }
 }
